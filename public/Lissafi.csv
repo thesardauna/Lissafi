@@ -1,16 +1,141 @@
-title,category,prompt,tags,use_case,notes
-"Cold Open Hook Generator","Writing","Generate 10 cold-open hooks for a short video about: {topic}. Each hook must be under 12 seconds, punchy, and curiosity-driven.","writing,video,hook","Create viral hooks for Reels/TikTok","Use {topic} as a variable."
-"Brand Voice DNA","Business","Ask me 12 questions to extract my brand voice. Then summarize my voice as: tone, do/don't list, sample phrases, and a 120-word style guide.","branding,copywriting,business","Define a consistent brand voice",""
-"Poster Concept (Rambow-Style)","Design","Create 5 conceptual poster ideas using one strong metaphor for: {message}. For each, provide metaphor, composition, typography notes, and color mood.","design,poster,concept","Generate high-impact poster concepts","Keep it symbolic, not literal."
-"Clean Code Refactor","Coding","Refactor the following code for readability and maintainability. Add clear names, remove duplication, and explain key changes:\n\n{code}","coding,refactor,software","Improve code quality","Paste code into {code}."
-"Data Insight Brief","Data","Given this dataset summary: {summary}. Produce 7 insights, 3 risks, and 5 recommended actions. Keep it executive-ready.","data,analysis,reporting","Turn analysis into decisions",""
-"Lesson Plan Builder","Education","Create a 45-minute lesson plan for: {topic}. Include objectives, warm-up, activity, assessment, and differentiation.","education,teaching,lesson","Build structured lesson plans",""
-"Health Habit Protocol","Health","Design a simple 14-day habit protocol for: {goal}. Include daily actions, friction reducers, and a tracking table.","health,habits,wellness","Create a realistic routine","Not medical advice."
-"Video Script (3-Act)","Video","Write a 60–90 second script on: {topic}. Use a 3-act structure, include visual cues, and end with a CTA.","video,script,story","Write short-form scripts",""
-"Customer Support Macro Pack","Business","Create 12 customer support response templates for: {product}. Include empathetic tone, clear steps, and escalation triggers.","support,customer,templates","Speed up support replies",""
-"UI Copy Polisher","Design","Rewrite this UI text to be clearer and more human while staying concise:\n\n{text}","ux,ui,copy","Improve microcopy",""
-"Meeting Minutes Synthesizer","Business","Summarize these meeting notes into: decisions, action items (owner + due date), and open questions:\n\n{notes}","business,ops,productivity","Turn notes into actions",""
-"SQL Query Helper","Data","Given the schema: {schema} and the goal: {goal}, produce the SQL query and explain each clause.","sql,data,query","Generate correct SQL",""
-"Recruitment JD Builder","Business","Write a job description for: {role}. Include responsibilities, requirements, nice-to-haves, and screening questions.","hr,job,writing","Create a strong JD",""
-"Story Remix (Style Transfer)","Writing","Rewrite this story in the style constraints I give you (tone, pacing, POV). First, ask clarifying questions, then rewrite:\n\n{story}","writing,editing,style","Rewrite with controlled style",""
-"Bug Report to Fix Plan","Coding","Given this bug report: {report}. Produce root-cause hypotheses, reproduction steps, logs to add, and a fix plan with tests.","debugging,coding,qa","Convert bug reports into action",""
+Category,Subcategory
+Text & Language Generation,Long-form writing
+Text & Language Generation,Short-form writing
+Text & Language Generation,Editing and proofreading
+Text & Language Generation,Grammar and syntax correction
+Text & Language Generation,Rewriting and paraphrasing
+Text & Language Generation,Summarization
+Text & Language Generation,Translation and localization
+Text & Language Generation,Tone and style transformation
+Text & Language Generation,Content expansion
+Text & Language Generation,Content condensation
+Image / Picture Generation,Photo-realistic imagery
+Image / Picture Generation,Concept art creation
+Image / Picture Generation,Product visualization
+Image / Picture Generation,Advertising graphics
+Image / Picture Generation,Poster and banner design
+Image / Picture Generation,Logo and brand imagery
+Image / Picture Generation,Background and texture generation
+Image / Picture Generation,Icon and symbol design
+Image / Picture Generation,Environmental scenes
+Image / Picture Generation,Portrait creation
+Video Generation,Short-form social media videos
+Video Generation,Explainer videos
+Video Generation,Promotional videos
+Video Generation,Cinematic sequences
+Video Generation,Motion graphics
+Video Generation,Storyboard generation
+Video Generation,Animated sequences
+Video Generation,Video scriptwriting
+Video Generation,Visual effects description
+Video Generation,Scene continuity planning
+Cartoon & Illustration,Character design
+Cartoon & Illustration,Mascot creation
+Cartoon & Illustration,Comic strip panels
+Cartoon & Illustration,Children’s book illustrations
+Cartoon & Illustration,Educational illustrations
+Cartoon & Illustration,Caricatures
+Cartoon & Illustration,Anime-style art
+Cartoon & Illustration,Flat vector illustrations
+Cartoon & Illustration,Concept sketches
+Cartoon & Illustration,Sticker and emoji art
+Audio & Music Generation,Music composition
+Audio & Music Generation,Beat and rhythm creation
+Audio & Music Generation,Melody generation
+Audio & Music Generation,Harmony structuring
+Audio & Music Generation,Sound effect design
+Audio & Music Generation,Voice style modeling
+Audio & Music Generation,Podcast intro and outro
+Audio & Music Generation,Jingle composition
+Audio & Music Generation,Background ambience creation
+Audio & Music Generation,Audio mood matching
+Code & Software Development,Web application development
+Code & Software Development,Mobile application development
+Code & Software Development,Backend logic creation
+Code & Software Development,Frontend UI coding
+Code & Software Development,Database design
+Code & Software Development,API development
+Code & Software Development,Debugging and error fixing
+Code & Software Development,Code optimization
+Code & Software Development,Code documentation
+Code & Software Development,Code explanation
+Data Analysis & Visualization,Data cleaning and preprocessing
+Data Analysis & Visualization,Descriptive statistics
+Data Analysis & Visualization,Exploratory data analysis
+Data Analysis & Visualization,Predictive modeling
+Data Analysis & Visualization,Trend detection
+Data Analysis & Visualization,Data summarization
+Data Analysis & Visualization,Chart and graph generation
+Data Analysis & Visualization,Dashboard design
+Data Analysis & Visualization,Data comparison
+Data Analysis & Visualization,Insight extraction
+Business & Marketing,Business model development
+Business & Marketing,Marketing strategy design
+Business & Marketing,Brand positioning
+Business & Marketing,Copywriting and ad text
+Business & Marketing,Market research synthesis
+Business & Marketing,Customer persona creation
+Business & Marketing,Sales funnel design
+Business & Marketing,Pricing strategy development
+Business & Marketing,Competitive analysis
+Business & Marketing,Campaign planning
+Education & Training,Lesson planning
+Education & Training,Curriculum design
+Education & Training,Quiz and test creation
+Education & Training,Study guide development
+Education & Training,Flashcard generation
+Education & Training,Course outline creation
+Education & Training,Learning objectives definition
+Education & Training,Practice exercise creation
+Education & Training,Skill assessment design
+Education & Training,Instructional content simplification
+Productivity & Organization,Task list generation
+Productivity & Organization,Schedule creation
+Productivity & Organization,Project roadmap development
+Productivity & Organization,Workflow optimization
+Productivity & Organization,Goal setting frameworks
+Productivity & Organization,Meeting agenda creation
+Productivity & Organization,Time-blocking plans
+Productivity & Organization,Documentation structuring
+Productivity & Organization,SOP development
+Productivity & Organization,Personal productivity systems
+Creative Writing & Storytelling,Short story writing
+Creative Writing & Storytelling,Novel plotting
+Creative Writing & Storytelling,Character backstory creation
+Creative Writing & Storytelling,World-building
+Creative Writing & Storytelling,Dialogue writing
+Creative Writing & Storytelling,Screenplay development
+Creative Writing & Storytelling,Song lyric writing
+Creative Writing & Storytelling,Poetry composition
+Creative Writing & Storytelling,Plot twist design
+Creative Writing & Storytelling,Theme exploration
+Social Media Content,Caption writing
+Social Media Content,Hashtag generation
+Social Media Content,Content calendar planning
+Social Media Content,Reel and TikTok scriptwriting
+Social Media Content,Thread creation
+Social Media Content,Carousel post content
+Social Media Content,Community engagement prompts
+Social Media Content,Brand voice definition
+Social Media Content,Platform-specific adaptation
+Social Media Content,Trend-based content ideation
+Design & Branding,Logo concept development
+Design & Branding,Color palette selection
+Design & Branding,Typography pairing
+Design & Branding,Brand style guide creation
+Design & Branding,UI and UX layout planning
+Design & Branding,Wireframe generation
+Design & Branding,Packaging design concepts
+Design & Branding,Visual hierarchy planning
+Design & Branding,Design consistency checks
+Design & Branding,Accessibility-focused design
+Prompt Engineering & Optimization,Prompt structure design
+Prompt Engineering & Optimization,Role-based prompting
+Prompt Engineering & Optimization,Constraint definition
+Prompt Engineering & Optimization,Multi-step prompt creation
+Prompt Engineering & Optimization,Few-shot prompting
+Prompt Engineering & Optimization,Zero-shot prompting
+Prompt Engineering & Optimization,Prompt refinement
+Prompt Engineering & Optimization,Output formatting control
+Prompt Engineering & Optimization,Prompt testing and evaluation
+Prompt Engineering & Optimization,Prompt library organization
