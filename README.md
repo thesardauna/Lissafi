@@ -1,9 +1,19 @@
-# Lissafi (MVP)
+# Lissafi
 
-A sci-fi inspired, offline-friendly static prompt library. Prompts load from `public/Lissafi.csv` in the browser. No backend, no database, no external API.
+CSV-driven sci-fi prompt-category library with a tiny Express backend to append new rows.
 
-## Local Setup
+## Data schema (strict)
+`Category,Subcategory,Prompts`
 
-1) Install dependencies:
+- CSV is the single source of truth.
+- Rows are de-duplicated automatically.
+- Grouping: Category -> Subcategory -> Prompts.
+- Blank `Prompts` means the subcategory exists but has no prompts yet.
+
+## Run locally
+
+### 1) Server
 ```bash
+cd server
 npm install
+npm start
