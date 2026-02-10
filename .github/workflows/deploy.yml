@@ -26,26 +26,11 @@ jobs:
         with:
           node-version: 20
 
-      - name: Diagnostics
-        run: |
-          set -eux
-          node -v
-          npm -v
-          ls -la
-          echo "---- src ----"
-          ls -la src || true
-          echo "---- public ----"
-          ls -la public || true
-
       - name: Install dependencies
-        run: |
-          set -eux
-          npm install --no-audit --no-fund
+        run: npm install --no-audit --no-fund
 
       - name: Build
-        run: |
-          set -eux
-          npm run build
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
