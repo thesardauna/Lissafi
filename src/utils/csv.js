@@ -24,6 +24,7 @@ export async function loadPromptsFromCSV(path = `${import.meta.env.BASE_URL}Liss
       const title = (r.title ?? "").toString().trim();
       const category = (r.category ?? "Uncategorized").toString().trim() || "Uncategorized";
       const prompt = (r.prompt ?? "").toString();
+
       const tagsRaw = (r.tags ?? "").toString();
       const tags = tagsRaw
         .split(",")
@@ -37,7 +38,8 @@ export async function loadPromptsFromCSV(path = `${import.meta.env.BASE_URL}Liss
       const date = (r.date ?? "").toString().trim(); // supports sorting if present
 
       // Stable, shareable ID: prefer explicit id, else derive from title.
-      const base = (r.id ?? title || `prompt-${idx}`).toString();
+      // FIX: Do not mix ?? and || without parentheses.
+      const base = ((r.id ?? title) || `prompt-${idx}`).toString();
       const id = slugify(base);
 
       return {
