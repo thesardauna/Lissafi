@@ -3,5 +3,6 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/Lissafi/"   // MUST match repo name exactly (case-sensitive)
+  // Repo name is "Lissafi" (case-sensitive), so base must match:
+  base: "/Lissafi/"
 });
