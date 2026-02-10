@@ -8,12 +8,19 @@ export default function App() {
   const [openSub, setOpenSub] = useState({ cat: "", sub: "" });
   const [q, setQ] = useState("");
   const [toast, setToast] = useState("");
+
   const [admin, setAdmin] = useState({ Category: "", Subcategory: "", Prompts: "" });
   const [busy, setBusy] = useState(false);
 
   async function load() {
-    const res = await fetch("/api/prompts/csv");
+    const csvUrl = import.meta.env.DEV
+      ? "/api/prompts/csv"
+      : `${import.meta.env.BASE_URL}Lissafi.csv`;
+
+    const res = await fetch(csvUrl);
+    if (!res.ok) throw new Error("Failed to load CSV");
     const text = await res.text();
+
     const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
     setRows(Array.isArray(parsed.data) ? parsed.data : []);
   }
@@ -28,16 +35,22 @@ export default function App() {
     const query = q.trim().toLowerCase();
     if (!query) return grouped;
 
-    // Search across Category, Subcategory, Prompts; keep structure.
     return grouped
       .map((c) => {
         const catHit = c.Category.toLowerCase().includes(query);
+
         const subs = c.Subcategories
           .map((s) => {
             const subHit = s.Subcategory.toLowerCase().includes(query);
             const promptsHit = s.Prompts.filter((p) => p.toLowerCase().includes(query));
             const keep = catHit || subHit || promptsHit.length > 0;
-            return keep ? { ...s, Prompts: catHit || subHit ? s.Prompts : promptsHit } : null;
+
+            if (!keep) return null;
+
+            return {
+              ...s,
+              Prompts: catHit || subHit ? s.Prompts : promptsHit
+            };
           })
           .filter(Boolean);
 
@@ -70,14 +83,16 @@ export default function App() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(admin)
       });
+
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
         showToast(data.message || "Failed");
         return;
       }
+
       showToast("Added");
       setAdmin({ Category: "", Subcategory: "", Prompts: "" });
-      await load(); // reflect updates immediately
+      await load();
     } finally {
       setBusy(false);
     }
@@ -86,6 +101,7 @@ export default function App() {
   return (
     <div className="page">
       <div className="bg" />
+
       <header className="header">
         <div className="brand">Lissafi</div>
         <div className="tag">Prompt Library</div>
@@ -105,10 +121,10 @@ export default function App() {
         <section className="panel">
           <div className="panelTitle">Categories</div>
 
-          {/* Categories only by default */}
           <div className="list">
             {filteredGrouped.map((c) => {
               const isOpen = openCat === c.Category;
+
               return (
                 <div key={c.Category} className="item">
                   <button
@@ -122,24 +138,28 @@ export default function App() {
                     <span className="rowMeta">{c.Subcategories.length}</span>
                   </button>
 
-                  {/* Subcategories appear only after Category click */}
                   {isOpen ? (
                     <div className="subList">
                       {c.Subcategories.map((s) => {
-                        const subOpen = openSub.cat === c.Category && openSub.sub === s.Subcategory;
+                        const subOpen =
+                          openSub.cat === c.Category && openSub.sub === s.Subcategory;
+
                         return (
                           <div key={s.Subcategory} className="subItem">
                             <button
                               className={`subRow ${subOpen ? "active" : ""}`}
                               onClick={() =>
-                                setOpenSub(subOpen ? { cat: "", sub: "" } : { cat: c.Category, sub: s.Subcategory })
+                                setOpenSub(
+                                  subOpen
+                                    ? { cat: "", sub: "" }
+                                    : { cat: c.Category, sub: s.Subcategory }
+                                )
                               }
                             >
                               <span className="rowText">{s.Subcategory}</span>
                               <span className="rowMeta">{s.Prompts.length}</span>
                             </button>
 
-                            {/* Prompts appear only after Subcategory click */}
                             {subOpen ? (
                               <div className="cards">
                                 {s.Prompts.length === 0 ? (
@@ -155,49 +175,4 @@ export default function App() {
                                   ))
                                 )}
                               </div>
-                            ) : null}
-                          </div>
-                        );
-                      })}
-                    </div>
-                  ) : null}
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        <section className="panel">
-          <div className="panelTitle">Admin: Add Row (Appends to CSV)</div>
-          <form className="form" onSubmit={submit}>
-            <input
-              className="input"
-              value={admin.Category}
-              onChange={(e) => setAdmin((s) => ({ ...s, Category: e.target.value }))}
-              placeholder="Category"
-            />
-            <input
-              className="input"
-              value={admin.Subcategory}
-              onChange={(e) => setAdmin((s) => ({ ...s, Subcategory: e.target.value }))}
-              placeholder="Subcategory"
-            />
-            <textarea
-              className="textarea"
-              value={admin.Prompts}
-              onChange={(e) => setAdmin((s) => ({ ...s, Prompts: e.target.value }))}
-              placeholder="Prompts (can be blank)"
-              rows={4}
-            />
-            <button className="btn" disabled={busy}>
-              {busy ? "Saving..." : "Add"}
-            </button>
-          </form>
-        </section>
-      </main>
-
-      {toast ? <div className="toast">{toast}</div> : null}
-      <footer className="footer">CSV-driven. Minimal sci-fi UI. Fast search.</footer>
-    </div>
-  );
-}
+                            ) :
