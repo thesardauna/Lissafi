@@ -1,1 +1,16 @@
-
+title,category,prompt,tags,use_case,notes
+"Cold Open Hook Generator","Writing","Generate 10 cold-open hooks for a short video about: {topic}. Each hook must be under 12 seconds, punchy, and curiosity-driven.","writing,video,hook","Create viral hooks for Reels/TikTok","Use {topic} as a variable."
+"Brand Voice DNA","Business","Ask me 12 questions to extract my brand voice. Then summarize my voice as: tone, do/don't list, sample phrases, and a 120-word style guide.","branding,copywriting,business","Define a consistent brand voice",""
+"Poster Concept (Rambow-Style)","Design","Create 5 conceptual poster ideas using one strong metaphor for: {message}. For each, provide metaphor, composition, typography notes, and color mood.","design,poster,concept","Generate high-impact poster concepts","Keep it symbolic, not literal."
+"Clean Code Refactor","Coding","Refactor the following code for readability and maintainability. Add clear names, remove duplication, and explain key changes:\n\n{code}","coding,refactor,software","Improve code quality","Paste code into {code}."
+"Data Insight Brief","Data","Given this dataset summary: {summary}. Produce 7 insights, 3 risks, and 5 recommended actions. Keep it executive-ready.","data,analysis,reporting","Turn analysis into decisions",""
+"Lesson Plan Builder","Education","Create a 45-minute lesson plan for: {topic}. Include objectives, warm-up, activity, assessment, and differentiation.","education,teaching,lesson","Build structured lesson plans",""
+"Health Habit Protocol","Health","Design a simple 14-day habit protocol for: {goal}. Include daily actions, friction reducers, and a tracking table.","health,habits,wellness","Create a realistic routine","Not medical advice."
+"Video Script (3-Act)","Video","Write a 60–90 second script on: {topic}. Use a 3-act structure, include visual cues, and end with a CTA.","video,script,story","Write short-form scripts",""
+"Customer Support Macro Pack","Business","Create 12 customer support response templates for: {product}. Include empathetic tone, clear steps, and escalation triggers.","support,customer,templates","Speed up support replies",""
+"UI Copy Polisher","Design","Rewrite this UI text to be clearer and more human while staying concise:\n\n{text}","ux,ui,copy","Improve microcopy",""
+"Meeting Minutes Synthesizer","Business","Summarize these meeting notes into: decisions, action items (owner + due date), and open questions:\n\n{notes}","business,ops,productivity","Turn notes into actions",""
+"SQL Query Helper","Data","Given the schema: {schema} and the goal: {goal}, produce the SQL query and explain each clause.","sql,data,query","Generate correct SQL",""
+"Recruitment JD Builder","Business","Write a job description for: {role}. Include responsibilities, requirements, nice-to-haves, and screening questions.","hr,job,writing","Create a strong JD",""
+"Story Remix (Style Transfer)","Writing","Rewrite this story in the style constraints I give you (tone, pacing, POV). First, ask clarifying questions, then rewrite:\n\n{story}","writing,editing,style","Rewrite with controlled style",""
+"Bug Report to Fix Plan","Coding","Given this bug report: {report}. Produce root-cause hypotheses, reproduction steps, logs to add, and a fix plan with tests.","debugging,coding,qa","Convert bug reports into action",""
