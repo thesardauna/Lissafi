@@ -21,13 +21,17 @@ export default function App() {
     if (!res.ok) throw new Error("Failed to load CSV");
     const text = await res.text();
 
-    const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
+    const parsed = Papa.parse(text, {
+      header: true,
+      skipEmptyLines: true,
+      transformHeader: (h) => (h ?? "").toString().replace(/^\uFEFF/, "").trim()
+    });
+
     setRows(Array.isArray(parsed.data) ? parsed.data : []);
   }
 
   useEffect(() => {
     load().catch(() => {});
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const grouped = useMemo(() => dedupeAndGroup(rows), [rows]);
