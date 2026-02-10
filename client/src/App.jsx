@@ -27,6 +27,7 @@ export default function App() {
 
   useEffect(() => {
     load().catch(() => {});
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const grouped = useMemo(() => dedupeAndGroup(rows), [rows]);
@@ -61,8 +62,8 @@ export default function App() {
 
   function showToast(msg) {
     setToast(msg);
-    window.clearTimeout(window.__t);
-    window.__t = window.setTimeout(() => setToast(""), 1800);
+    window.clearTimeout(window.__lissafiToast);
+    window.__lissafiToast = window.setTimeout(() => setToast(""), 1800);
   }
 
   async function copy(text) {
@@ -133,6 +134,7 @@ export default function App() {
                       setOpenCat(isOpen ? "" : c.Category);
                       setOpenSub({ cat: "", sub: "" });
                     }}
+                    type="button"
                   >
                     <span className="rowText">{c.Category}</span>
                     <span className="rowMeta">{c.Subcategories.length}</span>
@@ -150,11 +152,10 @@ export default function App() {
                               className={`subRow ${subOpen ? "active" : ""}`}
                               onClick={() =>
                                 setOpenSub(
-                                  subOpen
-                                    ? { cat: "", sub: "" }
-                                    : { cat: c.Category, sub: s.Subcategory }
+                                  subOpen ? { cat: "", sub: "" } : { cat: c.Category, sub: s.Subcategory }
                                 )
                               }
+                              type="button"
                             >
                               <span className="rowText">{s.Subcategory}</span>
                               <span className="rowMeta">{s.Prompts.length}</span>
@@ -168,11 +169,61 @@ export default function App() {
                                   s.Prompts.map((p, idx) => (
                                     <div className="card" key={`${s.Subcategory}-${idx}`}>
                                       <div className="prompt">{p}</div>
-                                      <button className="copy" onClick={() => copy(p)}>
+                                      <button className="copy" onClick={() => copy(p)} type="button">
                                         Copy
                                       </button>
                                     </div>
                                   ))
                                 )}
                               </div>
-                            ) :
+                            ) : null}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  ) : null}
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        <section className="panel">
+          <div className="panelTitle">Admin: Add Row (Appends to CSV)</div>
+
+          <div className="empty" style={{ marginBottom: 10 }}>
+            GitHub Pages cannot run the server. This form works locally (DEV) only.
+          </div>
+
+          <form className="form" onSubmit={submit}>
+            <input
+              className="input"
+              value={admin.Category}
+              onChange={(e) => setAdmin((s) => ({ ...s, Category: e.target.value }))}
+              placeholder="Category"
+            />
+            <input
+              className="input"
+              value={admin.Subcategory}
+              onChange={(e) => setAdmin((s) => ({ ...s, Subcategory: e.target.value }))}
+              placeholder="Subcategory"
+            />
+            <textarea
+              className="textarea"
+              value={admin.Prompts}
+              onChange={(e) => setAdmin((s) => ({ ...s, Prompts: e.target.value }))}
+              placeholder="Prompts (can be blank)"
+              rows={4}
+            />
+            <button className="btn" disabled={busy || !import.meta.env.DEV} type="submit">
+              {busy ? "Saving..." : "Add"}
+            </button>
+          </form>
+        </section>
+      </main>
+
+      {toast ? <div className="toast">{toast}</div> : null}
+      <footer className="footer">CSV-driven. Minimal sci-fi UI. Fast search.</footer>
+    </div>
+  );
+}
