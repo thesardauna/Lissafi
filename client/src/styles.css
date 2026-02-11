@@ -174,3 +174,28 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans)}
 }
 
 .main{ padding-bottom: 70px; }
+
+
+.hint{
+  margin-top:10px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.results{display:grid;gap:14px}
+.resultGroup{display:grid;gap:10px}
+.resultCat{
+  font-size:13px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--cyan);
+  text-shadow:0 0 18px rgba(34,211,238,0.18);
+}
+.resultSub{display:grid;gap:10px}
+.resultSubHead{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  color:var(--muted);
+}
