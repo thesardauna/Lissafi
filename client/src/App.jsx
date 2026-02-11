@@ -117,6 +117,35 @@ export default function App() {
 
       <main className="main">
         <section className="panel">
+          <div className="panelTitle">About Lissafi</div>
+
+          <div className="about">
+            <p>
+              <strong>Lissafi</strong> is a curated prompt library that helps you quickly
+              discover, explore, and copy high-quality AI prompts across different
+              categories and use cases.
+            </p>
+
+            <h4>How to Use</h4>
+            <ul>
+              <li>
+                <strong>Search:</strong> Type any keyword to find prompts by category,
+                subcategory, or content.
+              </li>
+              <li>
+                <strong>Browse:</strong> Select a Category, then a Subcategory to reveal
+                related prompts.
+              </li>
+              <li>
+                <strong>Copy:</strong> Click the Copy button to use a prompt instantly.
+              </li>
+            </ul>
+
+            <p className="muted">Clear the search field to return to dropdown browsing.</p>
+          </div>
+        </section>
+
+        <section className="panel">
           <div className="panelTitle">Search</div>
           <input
             className="search"
@@ -174,7 +203,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* Search results take priority when search is non-empty */}
         {showSearch ? (
           <section className="panel">
             <div className="panelTitle">Results</div>
@@ -217,7 +245,6 @@ export default function App() {
           </section>
         ) : null}
 
-        {/* Dropdown browsing (only when search is empty) */}
         {showDropdownPrompts ? (
           <section className="panel">
             <div className="panelTitle">Prompts</div>
