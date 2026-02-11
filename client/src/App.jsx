@@ -1,32 +1,19 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Papa from "papaparse";
-import { dedupeAndGroup } from "./utils/group";
 
 export default function App() {
   const [rows, setRows] = useState([]);
-  const [openCat, setOpenCat] = useState("");
-  const [openSub, setOpenSub] = useState({ cat: "", sub: "" });
-  const [q, setQ] = useState("");
   const [toast, setToast] = useState("");
 
-  const [admin, setAdmin] = useState({ Category: "", Subcategory: "", Prompts: "" });
-  const [busy, setBusy] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedSubcategory, setSelectedSubcategory] = useState("");
 
   async function load() {
-    const csvUrl = import.meta.env.DEV
-      ? "/api/prompts/csv"
-      : `${import.meta.env.BASE_URL}Lissafi.csv`;
-
+    const csvUrl = `${import.meta.env.BASE_URL}Lissafi.csv`;
     const res = await fetch(csvUrl);
     if (!res.ok) throw new Error("Failed to load CSV");
     const text = await res.text();
-
-    const parsed = Papa.parse(text, {
-      header: true,
-      skipEmptyLines: true,
-      transformHeader: (h) => (h ?? "").toString().replace(/^\uFEFF/, "").trim()
-    });
-
+    const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
     setRows(Array.isArray(parsed.data) ? parsed.data : []);
   }
 
@@ -34,40 +21,47 @@ export default function App() {
     load().catch(() => {});
   }, []);
 
-  const grouped = useMemo(() => dedupeAndGroup(rows), [rows]);
-
-  const filteredGrouped = useMemo(() => {
-    const query = q.trim().toLowerCase();
-    if (!query) return grouped;
-
-    return grouped
-      .map((c) => {
-        const catHit = c.Category.toLowerCase().includes(query);
-
-        const subs = c.Subcategories
-          .map((s) => {
-            const subHit = s.Subcategory.toLowerCase().includes(query);
-            const promptsHit = s.Prompts.filter((p) => p.toLowerCase().includes(query));
-            const keep = catHit || subHit || promptsHit.length > 0;
-
-            if (!keep) return null;
-
-            return {
-              ...s,
-              Prompts: catHit || subHit ? s.Prompts : promptsHit
-            };
-          })
-          .filter(Boolean);
-
-        return subs.length ? { ...c, Subcategories: subs } : null;
+  const normalized = useMemo(() => {
+    const seen = new Set();
+    return rows
+      .map((r) => {
+        const Category = (r.Category ?? "").toString().trim();
+        const Subcategory = (r.Subcategory ?? "").toString().trim();
+        const Prompts = (r.Prompts ?? "").toString();
+        return { Category, Subcategory, Prompts };
       })
-      .filter(Boolean);
-  }, [grouped, q]);
+      .filter((r) => r.Category && r.Subcategory)
+      .filter((r) => {
+        const key = `${r.Category}|${r.Subcategory}|${r.Prompts}`;
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+  }, [rows]);
+
+  const categories = useMemo(() => {
+    return Array.from(new Set(normalized.map((r) => r.Category))).sort((a, b) => a.localeCompare(b));
+  }, [normalized]);
+
+  const subcategories = useMemo(() => {
+    if (!selectedCategory) return [];
+    return Array.from(
+      new Set(normalized.filter((r) => r.Category === selectedCategory).map((r) => r.Subcategory))
+    ).sort((a, b) => a.localeCompare(b));
+  }, [normalized, selectedCategory]);
+
+  const prompts = useMemo(() => {
+    if (!selectedCategory || !selectedSubcategory) return [];
+    return normalized
+      .filter((r) => r.Category === selectedCategory && r.Subcategory === selectedSubcategory)
+      .map((r) => r.Prompts)
+      .filter((p) => p.trim());
+  }, [normalized, selectedCategory, selectedSubcategory]);
 
   function showToast(msg) {
     setToast(msg);
     window.clearTimeout(window.__lissafiToast);
-    window.__lissafiToast = window.setTimeout(() => setToast(""), 1800);
+    window.__lissafiToast = window.setTimeout(() => setToast(""), 1600);
   }
 
   async function copy(text) {
@@ -76,30 +70,6 @@ export default function App() {
       showToast("Copied");
     } catch {
       showToast("Copy failed");
-    }
-  }
-
-  async function submit(e) {
-    e.preventDefault();
-    setBusy(true);
-    try {
-      const res = await fetch("/api/prompts/add", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(admin)
-      });
-
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        showToast(data.message || "Failed");
-        return;
-      }
-
-      showToast("Added");
-      setAdmin({ Category: "", Subcategory: "", Prompts: "" });
-      await load();
-    } finally {
-      setBusy(false);
     }
   }
 
@@ -113,121 +83,75 @@ export default function App() {
       </header>
 
       <main className="main">
-        <div className="searchWrap">
-          <input
-            className="search"
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-            placeholder="Search Category, Subcategory, Prompts..."
-            aria-label="Search"
-          />
-        </div>
-
         <section className="panel">
-          <div className="panelTitle">Categories</div>
+          <div className="panelTitle">Select</div>
 
-          <div className="list">
-            {filteredGrouped.map((c) => {
-              const isOpen = openCat === c.Category;
+          <div className="controls">
+            <div className="control">
+              <label className="label">Category</label>
+              <select
+                className="select"
+                value={selectedCategory}
+                onChange={(e) => {
+                  setSelectedCategory(e.target.value);
+                  setSelectedSubcategory("");
+                }}
+              >
+                <option value="">Choose a category…</option>
+                {categories.map((c) => (
+                  <option key={c} value={c}>
+                    {c}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-              return (
-                <div key={c.Category} className="item">
-                  <button
-                    className={`row ${isOpen ? "active" : ""}`}
-                    onClick={() => {
-                      setOpenCat(isOpen ? "" : c.Category);
-                      setOpenSub({ cat: "", sub: "" });
-                    }}
-                    type="button"
-                  >
-                    <span className="rowText">{c.Category}</span>
-                    <span className="rowMeta">{c.Subcategories.length}</span>
-                  </button>
-
-                  {isOpen ? (
-                    <div className="subList">
-                      {c.Subcategories.map((s) => {
-                        const subOpen =
-                          openSub.cat === c.Category && openSub.sub === s.Subcategory;
-
-                        return (
-                          <div key={s.Subcategory} className="subItem">
-                            <button
-                              className={`subRow ${subOpen ? "active" : ""}`}
-                              onClick={() =>
-                                setOpenSub(
-                                  subOpen ? { cat: "", sub: "" } : { cat: c.Category, sub: s.Subcategory }
-                                )
-                              }
-                              type="button"
-                            >
-                              <span className="rowText">{s.Subcategory}</span>
-                              <span className="rowMeta">{s.Prompts.length}</span>
-                            </button>
-
-                            {subOpen ? (
-                              <div className="cards">
-                                {s.Prompts.length === 0 ? (
-                                  <div className="empty">No prompts yet.</div>
-                                ) : (
-                                  s.Prompts.map((p, idx) => (
-                                    <div className="card" key={`${s.Subcategory}-${idx}`}>
-                                      <div className="prompt">{p}</div>
-                                      <button className="copy" onClick={() => copy(p)} type="button">
-                                        Copy
-                                      </button>
-                                    </div>
-                                  ))
-                                )}
-                              </div>
-                            ) : null}
-                          </div>
-                        );
-                      })}
-                    </div>
-                  ) : null}
-                </div>
-              );
-            })}
+            <div className="control">
+              <label className="label">Subcategory</label>
+              <select
+                className="select"
+                value={selectedSubcategory}
+                disabled={!selectedCategory}
+                onChange={(e) => setSelectedSubcategory(e.target.value)}
+              >
+                <option value="">
+                  {selectedCategory ? "Choose a subcategory…" : "Select category first"}
+                </option>
+                {subcategories.map((s) => (
+                  <option key={s} value={s}>
+                    {s}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
         </section>
 
-        <section className="panel">
-          <div className="panelTitle">Admin: Add Row (Appends to CSV)</div>
+        {selectedCategory && selectedSubcategory ? (
+          <section className="panel">
+            <div className="panelTitle">Prompts</div>
 
-          <div className="empty" style={{ marginBottom: 10 }}>
-            GitHub Pages cannot run the server. This form works locally (DEV) only.
-          </div>
-
-          <form className="form" onSubmit={submit}>
-            <input
-              className="input"
-              value={admin.Category}
-              onChange={(e) => setAdmin((s) => ({ ...s, Category: e.target.value }))}
-              placeholder="Category"
-            />
-            <input
-              className="input"
-              value={admin.Subcategory}
-              onChange={(e) => setAdmin((s) => ({ ...s, Subcategory: e.target.value }))}
-              placeholder="Subcategory"
-            />
-            <textarea
-              className="textarea"
-              value={admin.Prompts}
-              onChange={(e) => setAdmin((s) => ({ ...s, Prompts: e.target.value }))}
-              placeholder="Prompts (can be blank)"
-              rows={4}
-            />
-            <button className="btn" disabled={busy || !import.meta.env.DEV} type="submit">
-              {busy ? "Saving..." : "Add"}
-            </button>
-          </form>
-        </section>
+            <div className="cards">
+              {prompts.length === 0 ? (
+                <div className="empty">No prompts yet.</div>
+              ) : (
+                prompts.map((p, idx) => (
+                  <div className="card" key={`${selectedSubcategory}-${idx}`}>
+                    <div className="prompt">{p}</div>
+                    <button className="copy" onClick={() => copy(p)} type="button">
+                      Copy
+                    </button>
+                  </div>
+                ))
+              )}
+            </div>
+          </section>
+        ) : null}
       </main>
 
       {toast ? <div className="toast">{toast}</div> : null}
-      <footer className="footer">CSV-driven. Minimal sci-fi UI. Fast search.</footer>
+
+      <footer className="footer footerFixed">© Lissafi</footer>
     </div>
   );
 }
