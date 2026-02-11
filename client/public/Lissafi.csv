@@ -1,210 +1,353 @@
 Category,Subcategory,Prompts
-Text & Language Generation,Long-form writing,"Write a clear 800-word article explaining [topic] for a general audience with headings and a conclusion."
-Text & Language Generation,Long-form writing,"Draft a structured blog post on [topic] including an introduction, three sections, and a summary."
-Text & Language Generation,Long-form writing,"Write a step-by-step guide on [topic] using simple language and examples."
-Text & Language Generation,Long-form writing,"Create an informative article on [topic] aimed at beginners, avoiding technical jargon."
-Text & Language Generation,Long-form writing,"Write a descriptive essay about [topic] focusing on clarity and flow."
-Text & Language Generation,Long-form writing,"Write a 1,500-word in-depth article on [topic] with data-backed arguments."
-Text & Language Generation,Long-form writing,"Develop a long-form report on [topic] with executive summary and key takeaways."
-Text & Language Generation,Long-form writing,"Create a detailed white paper on [topic] for a professional audience."
-Text & Language Generation,Long-form writing,"Write a comprehensive tutorial on [topic] including best practices and pitfalls."
-Text & Language Generation,Long-form writing,"Draft a thought-leadership article on [topic] with original insights."
-Text & Language Generation,Long-form writing,"Produce a publication-ready research-style article on [topic] with citations."
-Text & Language Generation,Long-form writing,"Write a policy-style document analyzing [topic] and its implications."
-Text & Language Generation,Long-form writing,"Create a multi-chapter long-form guide on [topic] with cross-referenced sections."
-Text & Language Generation,Long-form writing,"Draft an authoritative industry report on [topic] using a formal tone."
-Text & Language Generation,Long-form writing,"Write a definitive long-form piece on [topic] designed for expert readers."
+Category,Subcategory,Prompts
+Text & Language Generation,Long-form writing,Develop a 1500-word article on [topic] with clear sections logical progression and supporting examples
+Text & Language Generation,Long-form writing,Write an in-depth guide explaining [process] for beginners through advanced users
+Text & Language Generation,Long-form writing,Create a comprehensive blog post analyzing current trends in [industry]
+Text & Language Generation,Long-form writing,Compose a detailed white paper on [problem] and proposed solutions
+Text & Language Generation,Long-form writing,Write a research-style article comparing multiple approaches to [topic]
+Text & Language Generation,Long-form writing,Produce a long-form article integrating data case studies and expert viewpoints on [topic]
+Text & Language Generation,Long-form writing,Write a thought-leadership piece arguing a strong position on [issue] with evidence
+Text & Language Generation,Long-form writing,Develop a multi-section report evaluating the long-term impact of [technology or policy]
+Text & Language Generation,Long-form writing,Create a pillar content piece that serves as an authoritative resource on [topic]
+Text & Language Generation,Long-form writing,Write a strategic analysis document outlining future scenarios for [field]
+Text & Language Generation,Long-form writing,Write a 2000-word academic-style article with citations on [topic]
+Text & Language Generation,Long-form writing,Develop a comprehensive handbook covering theory and practice of [subject]
+Text & Language Generation,Long-form writing,Compose a multi-chapter style article that progressively deepens complexity on [topic]
+Text & Language Generation,Long-form writing,Write a policy brief with background implications and recommendations on [issue]
+Text & Language Generation,Long-form writing,Create an extensive synthesis of global research findings on [topic]
+Text & Language Generation,Short-form writing,Write a 150-word summary explaining [topic] in plain language
+Text & Language Generation,Short-form writing,Create a concise paragraph introducing [concept] for a general audience
+Text & Language Generation,Short-form writing,Write a short explainer on why [issue] matters
+Text & Language Generation,Short-form writing,Generate a brief product description for [product]
+Text & Language Generation,Short-form writing,Write a short professional bio for [person]
+Text & Language Generation,Short-form writing,Create a punchy micro-article presenting one key insight about [topic]
+Text & Language Generation,Short-form writing,Write a compact argument supporting or opposing [idea]
+Text & Language Generation,Short-form writing,Generate a short case snapshot describing a success story in [field]
+Text & Language Generation,Short-form writing,Write a crisp executive-style summary of [report]
+Text & Language Generation,Short-form writing,Produce a short editorial-style commentary on [current event]
+Text & Language Generation,Short-form writing,Write a tightly structured abstract summarizing [study]
+Text & Language Generation,Short-form writing,Condense complex information about [topic] into three short paragraphs
+Text & Language Generation,Short-form writing,Create a short persuasive message targeted at [audience]
+Text & Language Generation,Short-form writing,Write a high-impact elevator pitch for [idea]
+Text & Language Generation,Short-form writing,Develop a brief policy note summarizing key implications of [issue]
+Text & Language Generation,Editing and proofreading,Edit this text for grammar and clarity [paste text]
+Text & Language Generation,Editing and proofreading,Proofread and correct spelling and punctuation in this content [paste text]
+Text & Language Generation,Editing and proofreading,Improve sentence flow and readability of the following text [paste text]
+Text & Language Generation,Editing and proofreading,Edit this document to sound more professional [paste text]
+Text & Language Generation,Editing and proofreading,Polish this text while keeping the original meaning intact [paste text]
+Text & Language Generation,Editing and proofreading,Revise this text for consistency in tone and style [paste text]
+Text & Language Generation,Editing and proofreading,Edit this content to remove redundancy and tighten language [paste text]
+Text & Language Generation,Editing and proofreading,Proofread and format this text according to standard writing conventions [paste text]
+Text & Language Generation,Editing and proofreading,Edit this document to improve logical flow between paragraphs [paste text]
+Text & Language Generation,Editing and proofreading,Strengthen clarity and coherence across this entire document [paste text]
+Text & Language Generation,Editing and proofreading,Perform a comprehensive line-by-line edit for quality and precision [paste text]
+Text & Language Generation,Editing and proofreading,Edit this text to meet academic publication standards [paste text]
+Text & Language Generation,Editing and proofreading,Perform structural editing to improve organization and hierarchy [paste text]
+Text & Language Generation,Editing and proofreading,Edit this manuscript for stylistic consistency and depth [paste text]
+Text & Language Generation,Editing and proofreading,Perform a full professional copyedit and proofreading pass [paste text]
+Text & Language Generation,Grammar and syntax correction,Correct grammar errors in this text [paste text]
+Text & Language Generation,Grammar and syntax correction,Fix sentence structure issues in this passage [paste text]
+Text & Language Generation,Grammar and syntax correction,Correct punctuation mistakes in the following text [paste text]
+Text & Language Generation,Grammar and syntax correction,Standardize verb tense usage in this content [paste text]
+Text & Language Generation,Grammar and syntax correction,Correct capitalization and formatting errors [paste text]
+Text & Language Generation,Grammar and syntax correction,Identify and correct awkward or run-on sentences [paste text]
+Text & Language Generation,Grammar and syntax correction,Fix subject-verb agreement and pronoun errors [paste text]
+Text & Language Generation,Grammar and syntax correction,Correct grammatical errors while preserving tone [paste text]
+Text & Language Generation,Grammar and syntax correction,Edit this text to align with formal grammar standards [paste text]
+Text & Language Generation,Grammar and syntax correction,Normalize syntax across the entire document [paste text]
+Text & Language Generation,Grammar and syntax correction,Perform advanced grammar correction with stylistic alignment [paste text]
+Text & Language Generation,Grammar and syntax correction,Correct complex sentence-level grammatical inconsistencies [paste text]
+Text & Language Generation,Grammar and syntax correction,Apply professional-level grammar correction and standardization [paste text]
+Text & Language Generation,Grammar and syntax correction,Correct grammar while improving overall readability [paste text]
+Text & Language Generation,Grammar and syntax correction,Perform deep syntactic revision for accuracy and clarity [paste text]
+Category,Subcategory,Prompts
+Image / Picture Generation,Photo-realistic imagery,Create a realistic image of [subject]
+Image / Picture Generation,Photo-realistic imagery,Generate a lifelike photo of [scene]
+Image / Picture Generation,Photo-realistic imagery,Produce a high-detail realistic image of [object]
+Image / Picture Generation,Photo-realistic imagery,Render a natural-looking image of [environment]
+Image / Picture Generation,Photo-realistic imagery,Create a realistic portrait of [person]
+Image / Picture Generation,Photo-realistic imagery,Generate studio-quality realism for [subject]
+Image / Picture Generation,Photo-realistic imagery,Render realistic lighting and textures for [scene]
+Image / Picture Generation,Photo-realistic imagery,Create a photorealistic product image of [item]
+Image / Picture Generation,Photo-realistic imagery,Generate a cinematic realistic shot of [scene]
+Image / Picture Generation,Photo-realistic imagery,Produce ultra-realistic detail for [subject]
+Image / Picture Generation,Photo-realistic imagery,Create a hyper-realistic image with natural imperfections
+Image / Picture Generation,Photo-realistic imagery,Generate realism with accurate scale and depth
+Image / Picture Generation,Photo-realistic imagery,Render a real-world accurate environment scene
+Image / Picture Generation,Photo-realistic imagery,Produce realistic human features and skin tones
+Image / Picture Generation,Photo-realistic imagery,Create a professional-grade photorealistic image
 
-Text & Language Generation,Short-form writing,"Write a 100-word explanation of [topic] in plain language."
-Text & Language Generation,Short-form writing,"Create a short paragraph summarizing [topic]."
-Text & Language Generation,Short-form writing,"Write a concise introduction to [topic] for a website."
-Text & Language Generation,Short-form writing,"Draft a brief description of [topic] for non-experts."
-Text & Language Generation,Short-form writing,"Write a short blurb explaining why [topic] matters."
-Text & Language Generation,Short-form writing,"Write a 150-word overview of [topic] with a clear key message."
-Text & Language Generation,Short-form writing,"Create a punchy summary of [topic] for a professional audience."
-Text & Language Generation,Short-form writing,"Draft a short executive-style brief on [topic]."
-Text & Language Generation,Short-form writing,"Write a concise comparison between [topic A] and [topic B]."
-Text & Language Generation,Short-form writing,"Create a focused abstract describing [topic]."
-Text & Language Generation,Short-form writing,"Write a precise technical summary of [topic] under 200 words."
-Text & Language Generation,Short-form writing,"Draft a high-impact elevator pitch explaining [topic]."
-Text & Language Generation,Short-form writing,"Create a tightly written expert synopsis of [topic]."
-Text & Language Generation,Short-form writing,"Write a compressed analytical overview of [topic] for specialists."
-Text & Language Generation,Short-form writing,"Produce a publication-ready abstract on [topic]."
+Image / Picture Generation,Concept art creation,Create concept art for [idea]
+Image / Picture Generation,Concept art creation,Generate early-stage visual concepts for [project]
+Image / Picture Generation,Concept art creation,Design exploratory concept art for [world]
+Image / Picture Generation,Concept art creation,Create mood-focused concept art for [theme]
+Image / Picture Generation,Concept art creation,Generate visual concepts with varied styles
+Image / Picture Generation,Concept art creation,Produce detailed concept art for [character]
+Image / Picture Generation,Concept art creation,Create environment concept art for [location]
+Image / Picture Generation,Concept art creation,Generate futuristic concept designs for [idea]
+Image / Picture Generation,Concept art creation,Design concept art with color studies
+Image / Picture Generation,Concept art creation,Produce narrative-driven concept art
+Image / Picture Generation,Concept art creation,Create layered concept art with annotations
+Image / Picture Generation,Concept art creation,Generate advanced concept visuals for production
+Image / Picture Generation,Concept art creation,Design high-detail concept art variations
+Image / Picture Generation,Concept art creation,Produce cohesive concept art series
+Image / Picture Generation,Concept art creation,Create production-ready concept art
 
-Text & Language Generation,Editing and proofreading,"Proofread the following text for spelling and grammar errors."
-Text & Language Generation,Editing and proofreading,"Edit this text to improve clarity and sentence flow."
-Text & Language Generation,Editing and proofreading,"Correct punctuation and capitalization in this text."
-Text & Language Generation,Editing and proofreading,"Polish this paragraph to sound more professional."
-Text & Language Generation,Editing and proofreading,"Fix obvious grammar issues while keeping the original wording."
-Text & Language Generation,Editing and proofreading,"Edit this document for clarity, consistency, and readability."
-Text & Language Generation,Editing and proofreading,"Proofread this text using standard American English rules."
-Text & Language Generation,Editing and proofreading,"Improve sentence structure and transitions in this text."
-Text & Language Generation,Editing and proofreading,"Edit this content to align with a formal professional tone."
-Text & Language Generation,Editing and proofreading,"Refine this text to eliminate redundancy and ambiguity."
-Text & Language Generation,Editing and proofreading,"Perform a detailed copyedit focusing on style and coherence."
-Text & Language Generation,Editing and proofreading,"Edit this document to meet publication-quality standards."
-Text & Language Generation,Editing and proofreading,"Conduct a line-by-line professional edit of this text."
-Text & Language Generation,Editing and proofreading,"Proofread and optimize this text for expert readership."
-Text & Language Generation,Editing and proofreading,"Perform an advanced editorial review for precision and polish."
+Image / Picture Generation,Product visualization,Create a clean product render of [product]
+Image / Picture Generation,Product visualization,Generate a realistic product showcase image
+Image / Picture Generation,Product visualization,Render product on a neutral background
+Image / Picture Generation,Product visualization,Create a marketing-style product image
+Image / Picture Generation,Product visualization,Generate product visualization from description
+Image / Picture Generation,Product visualization,Render product with studio lighting
+Image / Picture Generation,Product visualization,Create lifestyle product visualization
+Image / Picture Generation,Product visualization,Generate exploded view of product design
+Image / Picture Generation,Product visualization,Render product with material accuracy
+Image / Picture Generation,Product visualization,Create multiple angle product views
+Image / Picture Generation,Product visualization,Produce high-detail commercial product render
+Image / Picture Generation,Product visualization,Generate product visualization with scale context
+Image / Picture Generation,Product visualization,Render product for e-commerce use
+Image / Picture Generation,Product visualization,Create premium product visualization
+Image / Picture Generation,Product visualization,Produce manufacturing-ready product visuals
 
-Text & Language Generation,Grammar and syntax correction,"Correct basic grammar mistakes in this text."
-Text & Language Generation,Grammar and syntax correction,"Fix sentence structure errors in the following content."
-Text & Language Generation,Grammar and syntax correction,"Correct subject-verb agreement issues in this text."
-Text & Language Generation,Grammar and syntax correction,"Repair grammar and punctuation errors throughout this passage."
-Text & Language Generation,Grammar and syntax correction,"Ensure all sentences are grammatically correct."
-Text & Language Generation,Grammar and syntax correction,"Correct complex grammatical issues and awkward constructions."
-Text & Language Generation,Grammar and syntax correction,"Standardize grammar usage across this document."
-Text & Language Generation,Grammar and syntax correction,"Fix syntax errors while preserving original meaning."
-Text & Language Generation,Grammar and syntax correction,"Improve grammatical accuracy for professional writing."
-Text & Language Generation,Grammar and syntax correction,"Correct advanced grammatical inconsistencies."
-Text & Language Generation,Grammar and syntax correction,"Perform expert-level grammar correction for formal publication."
-Text & Language Generation,Grammar and syntax correction,"Resolve nuanced syntax and structural issues."
-Text & Language Generation,Grammar and syntax correction,"Apply advanced grammar rules consistently across the text."
-Text & Language Generation,Grammar and syntax correction,"Correct grammar with attention to stylistic precision."
-Text & Language Generation,Grammar and syntax correction,"Conduct a comprehensive grammatical audit of this document."
+Image / Picture Generation,Advertising graphics,Create an ad graphic for [brand]
+Image / Picture Generation,Advertising graphics,Generate promotional image for [campaign]
+Image / Picture Generation,Advertising graphics,Design bold advertising visuals
+Image / Picture Generation,Advertising graphics,Create ad graphic with strong focal point
+Image / Picture Generation,Advertising graphics,Generate social media ad image
+Image / Picture Generation,Advertising graphics,Create high-contrast advertising artwork
+Image / Picture Generation,Advertising graphics,Design ad visuals with typography focus
+Image / Picture Generation,Advertising graphics,Generate branded advertising imagery
+Image / Picture Generation,Advertising graphics,Create ad graphic optimized for engagement
+Image / Picture Generation,Advertising graphics,Produce clean modern ad visuals
+Image / Picture Generation,Advertising graphics,Create campaign-ready advertising graphics
+Image / Picture Generation,Advertising graphics,Generate multi-format ad visuals
+Image / Picture Generation,Advertising graphics,Design advertising graphics with storytelling
+Image / Picture Generation,Advertising graphics,Produce premium commercial ad imagery
+Image / Picture Generation,Advertising graphics,Create full-funnel advertising visuals
 
-Text & Language Generation,Rewriting and paraphrasing,"Rewrite this text using simpler language."
-Text & Language Generation,Rewriting and paraphrasing,"Paraphrase this paragraph while keeping the original meaning."
-Text & Language Generation,Rewriting and paraphrasing,"Rewrite this content to improve clarity."
-Text & Language Generation,Rewriting and paraphrasing,"Restate this text in your own words."
-Text & Language Generation,Rewriting and paraphrasing,"Rewrite this passage to sound more natural."
-Text & Language Generation,Rewriting and paraphrasing,"Paraphrase this content for a professional audience."
-Text & Language Generation,Rewriting and paraphrasing,"Rewrite this text to reduce repetition."
-Text & Language Generation,Rewriting and paraphrasing,"Rephrase this content to improve flow and coherence."
-Text & Language Generation,Rewriting and paraphrasing,"Rewrite this text while preserving technical accuracy."
-Text & Language Generation,Rewriting and paraphrasing,"Paraphrase this document using a formal tone."
-Text & Language Generation,Rewriting and paraphrasing,"Rewrite this text to significantly improve readability."
-Text & Language Generation,Rewriting and paraphrasing,"Paraphrase this content with advanced vocabulary control."
-Text & Language Generation,Rewriting and paraphrasing,"Rewrite this document for expert-level communication."
-Text & Language Generation,Rewriting and paraphrasing,"Produce a refined paraphrase suitable for publication."
-Text & Language Generation,Rewriting and paraphrasing,"Rewrite this text with stylistic and semantic precision."
+Image / Picture Generation,Poster and banner design,Design a poster for [event]
+Image / Picture Generation,Poster and banner design,Create a banner for [campaign]
+Image / Picture Generation,Poster and banner design,Generate vertical poster design
+Image / Picture Generation,Poster and banner design,Create horizontal banner layout
+Image / Picture Generation,Poster and banner design,Design poster with strong typography
+Image / Picture Generation,Poster and banner design,Generate minimalist poster design
+Image / Picture Generation,Poster and banner design,Create bold graphic banner
+Image / Picture Generation,Poster and banner design,Design poster with visual hierarchy
+Image / Picture Generation,Poster and banner design,Generate event promotional banner
+Image / Picture Generation,Poster and banner design,Create poster optimized for print
+Image / Picture Generation,Poster and banner design,Design high-impact poster visuals
+Image / Picture Generation,Poster and banner design,Generate multi-size banner variations
+Image / Picture Generation,Poster and banner design,Create poster with thematic visuals
+Image / Picture Generation,Poster and banner design,Produce professional banner design
+Image / Picture Generation,Poster and banner design,Create campaign-ready poster series
 
-Text & Language Generation,Summarization,"Summarize this text into a short paragraph."
-Text & Language Generation,Summarization,"Create a brief summary highlighting the main idea."
-Text & Language Generation,Summarization,"Condense this content into key points."
-Text & Language Generation,Summarization,"Write a simple summary of the following text."
-Text & Language Generation,Summarization,"Summarize this article for a general audience."
-Text & Language Generation,Summarization,"Create a structured summary with bullet points."
-Text & Language Generation,Summarization,"Summarize this document for decision-makers."
-Text & Language Generation,Summarization,"Generate an executive summary from this text."
-Text & Language Generation,Summarization,"Condense this content while retaining core arguments."
-Text & Language Generation,Summarization,"Summarize this report in under 300 words."
-Text & Language Generation,Summarization,"Produce a high-precision analytical summary."
-Text & Language Generation,Summarization,"Create a summary emphasizing implications and outcomes."
-Text & Language Generation,Summarization,"Generate a publication-ready abstract."
-Text & Language Generation,Summarization,"Summarize this complex text for expert readers."
-Text & Language Generation,Summarization,"Create an advanced synthesis of the key ideas."
+Image / Picture Generation,Logo and brand imagery,Create a logo concept for [brand]
+Image / Picture Generation,Logo and brand imagery,Generate minimalist logo design
+Image / Picture Generation,Logo and brand imagery,Design modern brand logo
+Image / Picture Generation,Logo and brand imagery,Create logo with symbol and wordmark
+Image / Picture Generation,Logo and brand imagery,Generate scalable logo design
+Image / Picture Generation,Logo and brand imagery,Design logo for digital use
+Image / Picture Generation,Logo and brand imagery,Create logo for print applications
+Image / Picture Generation,Logo and brand imagery,Generate monochrome logo version
+Image / Picture Generation,Logo and brand imagery,Design logo with brand personality
+Image / Picture Generation,Logo and brand imagery,Create logo with geometric style
+Image / Picture Generation,Logo and brand imagery,Generate comprehensive logo system
+Image / Picture Generation,Logo and brand imagery,Design logo with visual rationale
+Image / Picture Generation,Logo and brand imagery,Create versatile brand imagery
+Image / Picture Generation,Logo and brand imagery,Generate professional brand logo
+Image / Picture Generation,Logo and brand imagery,Create production-ready logo assets
 
-Text & Language Generation,Translation and localization,"Translate this text from [language] to [language]."
-Text & Language Generation,Translation and localization,"Provide a clear translation of this text."
-Text & Language Generation,Translation and localization,"Translate this content using simple, natural language."
-Text & Language Generation,Translation and localization,"Convert this text into [language] accurately."
-Text & Language Generation,Translation and localization,"Translate this text while preserving meaning."
-Text & Language Generation,Translation and localization,"Translate and adapt this text for a local audience."
-Text & Language Generation,Translation and localization,"Ensure cultural appropriateness in this translation."
-Text & Language Generation,Translation and localization,"Localize this content for regional usage."
-Text & Language Generation,Translation and localization,"Translate this document using professional terminology."
-Text & Language Generation,Translation and localization,"Adapt this translation to industry standards."
-Text & Language Generation,Translation and localization,"Produce an expert-level translation with contextual nuance."
-Text & Language Generation,Translation and localization,"Translate this technical document with precision."
-Text & Language Generation,Translation and localization,"Localize this content for formal publication."
-Text & Language Generation,Translation and localization,"Provide a linguistically refined translation."
-Text & Language Generation,Translation and localization,"Deliver a publication-quality localized translation."
+Category,Subcategory,Prompts
+Video Generation,Short-form social media videos,Create a 30-second video concept for [topic]
+Video Generation,Short-form social media videos,Write a short script for a social clip about [idea]
+Video Generation,Short-form social media videos,Generate hooks for a short video on [topic]
+Video Generation,Short-form social media videos,Create captions and scene outline for [topic]
+Video Generation,Short-form social media videos,Design a vertical video concept for [platform]
+Video Generation,Short-form social media videos,Write a punchy short-form video script
+Video Generation,Short-form social media videos,Create a fast-paced edit plan
+Video Generation,Short-form social media videos,Generate platform-optimized short video structure
+Video Generation,Short-form social media videos,Design short video with CTA
+Video Generation,Short-form social media videos,Create short video storyboard
+Video Generation,Short-form social media videos,Build multi-scene short video flow
+Video Generation,Short-form social media videos,Create advanced hook-to-retention sequence
+Video Generation,Short-form social media videos,Generate data-driven short video format
+Video Generation,Short-form social media videos,Design high-conversion short video concept
+Video Generation,Short-form social media videos,Create viral-ready short video blueprint
 
-Text & Language Generation,Tone and style transformation,"Rewrite this text in a friendly tone."
-Text & Language Generation,Tone and style transformation,"Change this text to sound more formal."
-Text & Language Generation,Tone and style transformation,"Rewrite this content in a conversational style."
-Text & Language Generation,Tone and style transformation,"Adjust the tone of this text to be professional."
-Text & Language Generation,Tone and style transformation,"Rewrite this text to sound confident."
-Text & Language Generation,Tone and style transformation,"Transform this text into a persuasive tone."
-Text & Language Generation,Tone and style transformation,"Rewrite this content for an executive audience."
-Text & Language Generation,Tone and style transformation,"Adjust this text to align with brand voice."
-Text & Language Generation,Tone and style transformation,"Rewrite this text in a neutral analytical tone."
-Text & Language Generation,Tone and style transformation,"Convert this text into a formal report style."
-Text & Language Generation,Tone and style transformation,"Transform this content using advanced stylistic control."
-Text & Language Generation,Tone and style transformation,"Rewrite this text to meet academic tone standards."
-Text & Language Generation,Tone and style transformation,"Adjust tone and style for expert-level communication."
-Text & Language Generation,Tone and style transformation,"Rewrite this text to match editorial guidelines."
-Text & Language Generation,Tone and style transformation,"Perform a high-precision tone transformation."
+Video Generation,Explainer videos,Write explainer script for [topic]
+Video Generation,Explainer videos,Create outline for explainer video
+Video Generation,Explainer videos,Generate explainer voiceover text
+Video Generation,Explainer videos,Design explainer storyboard
+Video Generation,Explainer videos,Create simple explainer concept
+Video Generation,Explainer videos,Write structured explainer script
+Video Generation,Explainer videos,Generate explainer with examples
+Video Generation,Explainer videos,Design explainer with visuals
+Video Generation,Explainer videos,Create step-by-step explainer
+Video Generation,Explainer videos,Build explainer with CTA
+Video Generation,Explainer videos,Create layered explainer narrative
+Video Generation,Explainer videos,Design complex explainer storyboard
+Video Generation,Explainer videos,Generate explainer with data
+Video Generation,Explainer videos,Build long-form explainer structure
+Video Generation,Explainer videos,Create enterprise-level explainer
 
-Text & Language Generation,Content expansion,"Expand this short paragraph into a detailed explanation."
-Text & Language Generation,Content expansion,"Add more detail to this idea."
-Text & Language Generation,Content expansion,"Expand this content with examples."
-Text & Language Generation,Content expansion,"Develop this outline into full paragraphs."
-Text & Language Generation,Content expansion,"Elaborate on this concept clearly."
-Text & Language Generation,Content expansion,"Expand this content with structured sections."
-Text & Language Generation,Content expansion,"Add depth and supporting arguments to this text."
-Text & Language Generation,Content expansion,"Develop this idea into a comprehensive discussion."
-Text & Language Generation,Content expansion,"Expand this content for a professional audience."
-Text & Language Generation,Content expansion,"Add analytical depth to this explanation."
-Text & Language Generation,Content expansion,"Expand this concept into an expert-level discussion."
-Text & Language Generation,Content expansion,"Develop this idea into a formal report section."
-Text & Language Generation,Content expansion,"Expand this content with advanced insights."
-Text & Language Generation,Content expansion,"Produce a detailed expansion suitable for publication."
-Text & Language Generation,Content expansion,"Create a thorough and authoritative expansion of this text."
+Video Generation,Promotional videos,Write promo script for [product]
+Video Generation,Promotional videos,Create promo video outline
+Video Generation,Promotional videos,Generate tagline ideas
+Video Generation,Promotional videos,Design promo storyboard
+Video Generation,Promotional videos,Create teaser concept
+Video Generation,Promotional videos,Write benefit-driven promo script
+Video Generation,Promotional videos,Create feature highlight video
+Video Generation,Promotional videos,Design lifestyle promo concept
+Video Generation,Promotional videos,Generate launch video plan
+Video Generation,Promotional videos,Build promo with CTA
+Video Generation,Promotional videos,Create cinematic promo flow
+Video Generation,Promotional videos,Design multi-version promo
+Video Generation,Promotional videos,Generate campaign-level promo
+Video Generation,Promotional videos,Create conversion-focused promo
+Video Generation,Promotional videos,Build premium brand promo
 
-Text & Language Generation,Content condensation,"Shorten this text without losing meaning."
-Text & Language Generation,Content condensation,"Condense this paragraph into fewer sentences."
-Text & Language Generation,Content condensation,"Reduce this content to its core message."
-Text & Language Generation,Content condensation,"Create a shorter version of this text."
-Text & Language Generation,Content condensation,"Simplify this content while keeping key points."
-Text & Language Generation,Content condensation,"Condense this document into a concise summary."
-Text & Language Generation,Content condensation,"Reduce length while preserving clarity."
-Text & Language Generation,Content condensation,"Create a compact version for busy readers."
-Text & Language Generation,Content condensation,"Condense this text for executive review."
-Text & Language Generation,Content condensation,"Shorten this content for professional use."
-Text & Language Generation,Content condensation,"Produce a high-density condensed version."
-Text & Language Generation,Content condensation,"Condense this text with advanced precision."
-Text & Language Generation,Content condensation,"Create a refined condensed draft for publication."
-Text & Language Generation,Content condensation,"Reduce this content while preserving nuance."
-Text & Language Generation,Content condensation,"Generate an expert-level condensation of this text."
+Video Generation,Cinematic sequences,Describe cinematic scene
+Video Generation,Cinematic sequences,Create scene breakdown
+Video Generation,Cinematic sequences,Generate shot list
+Video Generation,Cinematic sequences,Design mood board
+Video Generation,Cinematic sequences,Write visual description
+Video Generation,Cinematic sequences,Create detailed scene direction
+Video Generation,Cinematic sequences,Generate lighting and camera notes
+Video Generation,Cinematic sequences,Design cinematic pacing
+Video Generation,Cinematic sequences,Build emotional arc
+Video Generation,Cinematic sequences,Create cinematic storyboard
+Video Generation,Cinematic sequences,Design multi-act cinematic sequence
+Video Generation,Cinematic sequences,Generate director-style treatment
+Video Generation,Cinematic sequences,Create visual motif system
+Video Generation,Cinematic sequences,Build high-detail sequence plan
+Video Generation,Cinematic sequences,Produce film-ready scene package
+
+Category,Subcategory,Prompts
+Cartoon & Illustration,Character design,Create character concept for [character]
+Cartoon & Illustration,Character design,Generate character appearance description
+Cartoon & Illustration,Character design,Design character outfit ideas
+Cartoon & Illustration,Character design,Create personality profile
+Cartoon & Illustration,Character design,Generate pose ideas
+Cartoon & Illustration,Character design,Create detailed character sheet
+Cartoon & Illustration,Character design,Design multiple costume variations
+Cartoon & Illustration,Character design,Generate expression set
+Cartoon & Illustration,Character design,Create turnaround views
+Cartoon & Illustration,Character design,Design character with color palette
+Cartoon & Illustration,Character design,Create backstory and motivation
+Cartoon & Illustration,Character design,Generate species or race variants
+Cartoon & Illustration,Character design,Design style consistency guide
+Cartoon & Illustration,Character design,Create animation-ready model
+Cartoon & Illustration,Character design,Produce production-ready character package
+
+Cartoon & Illustration,Mascot creation,Create mascot concept for [brand]
+Cartoon & Illustration,Mascot creation,Generate mascot appearance
+Cartoon & Illustration,Mascot creation,Design mascot outfit
+Cartoon & Illustration,Mascot creation,Create mascot personality
+Cartoon & Illustration,Mascot creation,Generate mascot poses
+Cartoon & Illustration,Mascot creation,Create detailed mascot sheet
+Cartoon & Illustration,Mascot creation,Design mascot variations
+Cartoon & Illustration,Mascot creation,Generate mascot expressions
+Cartoon & Illustration,Mascot creation,Create mascot turnaround
+Cartoon & Illustration,Mascot creation,Design mascot color palette
+Cartoon & Illustration,Mascot creation,Create mascot brand story
+Cartoon & Illustration,Mascot creation,Generate multi-style mascot versions
+Cartoon & Illustration,Mascot creation,Design mascot usage guidelines
+Cartoon & Illustration,Mascot creation,Create animation-ready mascot
+Cartoon & Illustration,Mascot creation,Produce production-ready mascot assets
+
+Cartoon & Illustration,Comic strip panels,Create 3-panel comic idea
+Cartoon & Illustration,Comic strip panels,Generate comic dialogue
+Cartoon & Illustration,Comic strip panels,Design panel layout
+Cartoon & Illustration,Comic strip panels,Create gag-based strip
+Cartoon & Illustration,Comic strip panels,Generate story concept
+Cartoon & Illustration,Comic strip panels,Create sequential panel flow
+Cartoon & Illustration,Comic strip panels,Design expressive poses
+Cartoon & Illustration,Comic strip panels,Generate scene descriptions
+Cartoon & Illustration,Comic strip panels,Create pacing plan
+Cartoon & Illustration,Comic strip panels,Design panel transitions
+Cartoon & Illustration,Comic strip panels,Create multi-strip arc
+Cartoon & Illustration,Comic strip panels,Generate visual continuity
+Cartoon & Illustration,Comic strip panels,Design thematic series
+Cartoon & Illustration,Comic strip panels,Create narrative structure
+Cartoon & Illustration,Comic strip panels,Produce print-ready strip set
+
+Cartoon & Illustration,Children’s book illustrations,Create illustration concept for story
+Cartoon & Illustration,Children’s book illustrations,Generate character visuals
+Cartoon & Illustration,Children’s book illustrations,Design scene illustrations
+Cartoon & Illustration,Children’s book illustrations,Create color mood guide
+Cartoon & Illustration,Children’s book illustrations,Generate style reference
+Cartoon & Illustration,Children’s book illustrations,Create full-page spreads
+Cartoon & Illustration,Children’s book illustrations,Design spot illustrations
+Cartoon & Illustration,Children’s book illustrations,Generate visual continuity
+Cartoon & Illustration,Children’s book illustrations,Create emotional beats
+Cartoon & Illustration,Children’s book illustrations,Design cover concept
+Cartoon & Illustration,Children’s book illustrations,Create illustration storyboard
+Cartoon & Illustration,Children’s book illustrations,Generate art direction notes
+Cartoon & Illustration,Children’s book illustrations,Design cohesive style system
+Cartoon & Illustration,Children’s book illustrations,Create print-ready artwork
+Cartoon & Illustration,Children’s book illustrations,Produce publishing-ready illustration set
+
+Category,Subcategory,Prompts
+Audio & Music Generation,Music composition,Compose original music in [genre]
+Audio & Music Generation,Music composition,Create instrumental piece
+Audio & Music Generation,Music composition,Generate melody idea
+Audio & Music Generation,Music composition,Write simple chord progression
+Audio & Music Generation,Music composition,Create short theme
+Audio & Music Generation,Music composition,Compose structured song
+Audio & Music Generation,Music composition,Generate multi-section composition
+Audio & Music Generation,Music composition,Create mood-based composition
+Audio & Music Generation,Music composition,Write harmony arrangement
+Audio & Music Generation,Music composition,Develop variation themes
+Audio & Music Generation,Music composition,Compose full orchestral score
+Audio & Music Generation,Music composition,Generate cinematic composition
+Audio & Music Generation,Music composition,Create layered musical piece
+Audio & Music Generation,Music composition,Write adaptive game music
+Audio & Music Generation,Music composition,Produce soundtrack-ready composition
+
+Audio & Music Generation,Beat and rhythm creation,Create beat pattern
+Audio & Music Generation,Beat and rhythm creation,Generate drum loop
+Audio & Music Generation,Beat and rhythm creation,Design rhythm groove
+Audio & Music Generation,Beat and rhythm creation,Create tempo map
+Audio & Music Generation,Beat and rhythm creation,Generate simple beat
+Audio & Music Generation,Beat and rhythm creation,Create multi-layer beat
+Audio & Music Generation,Beat and rhythm creation,Design syncopated rhythm
+Audio & Music Generation,Beat and rhythm creation,Generate genre-specific beat
+Audio & Music Generation,Beat and rhythm creation,Create dynamic rhythm changes
+Audio & Music Generation,Beat and rhythm creation,Design percussion arrangement
+Audio & Music Generation,Beat and rhythm creation,Create polyrhythmic structure
+Audio & Music Generation,Beat and rhythm creation,Generate evolving rhythm
+Audio & Music Generation,Beat and rhythm creation,Design complex groove
+Audio & Music Generation,Beat and rhythm creation,Create performance-ready beat
+Audio & Music Generation,Beat and rhythm creation,Produce studio-ready rhythm track
+
+Audio & Music Generation,Melody generation,Generate melody line
+Audio & Music Generation,Melody generation,Create melodic motif
+Audio & Music Generation,Melody generation,Design hook melody
+Audio & Music Generation,Melody generation,Generate simple tune
+Audio & Music Generation,Melody generation,Create melodic phrase
+Audio & Music Generation,Melody generation,Build extended melody
+Audio & Music Generation,Melody generation,Generate theme and variations
+Audio & Music Generation,Melody generation,Design emotional melody
+Audio & Music Generation,Melody generation,Create counter-melody
+Audio & Music Generation,Melody generation,Generate layered melody
+Audio & Music Generation,Melody generation,Compose cinematic melody
+Audio & Music Generation,Melody generation,Design leitmotif system
+Audio & Music Generation,Melody generation,Create evolving melodic arc
+Audio & Music Generation,Melody generation,Generate adaptive melody
+Audio & Music Generation,Melody generation,Produce production-ready melody set
+
+Audio & Music Generation,Harmony structuring,Create chord progression
+Audio & Music Generation,Harmony structuring,Generate basic harmony
+Audio & Music Generation,Sound effect design,Design sound effect
+Audio & Music Generation,Voice style modeling,Create voice style
+Audio & Music Generation,Podcast intro and outro,Write intro outro script
+Audio & Music Generation,Jingle composition,Create brand jingle
+Audio & Music Generation,Background ambience creation,Generate ambient soundscape
+Audio & Music Generation,Audio mood matching,Match sound to mood
 
 
 
 
-Image / Picture Generation,Photo-realistic imagery,"Generate a photo-realistic image of [subject] with natural lighting and high detail."
-Image / Picture Generation,Concept art creation,"Create concept art for [subject], showing multiple design variations and moods."
-Image / Picture Generation,Product visualization,"Generate a realistic product visualization of [product] on a clean background."
-Image / Picture Generation,Advertising graphics,"Create an advertising graphic for [product/service] with bold typography and modern style."
-Image / Picture Generation,Poster and banner design,"Design a poster/banner for [event/topic] with strong visual hierarchy."
-Image / Picture Generation,Logo and brand imagery,"Create a logo concept for a brand named [name] in a minimalist style."
-Image / Picture Generation,Background and texture generation,"Generate a seamless background texture inspired by [style]."
-Image / Picture Generation,Icon and symbol design,"Design a simple icon representing [concept]."
-Image / Picture Generation,Environmental scenes,"Create a detailed environmental scene of [location]."
-Image / Picture Generation,Portrait creation,"Generate a high-quality portrait of [person description]."
-
-Video Generation,Short-form social media videos,"Create a 30-second script and scene outline for a social media video about [topic]."
-Video Generation,Explainer videos,"Develop an explainer video script that simplifies [concept] for beginners."
-Video Generation,Promotional videos,"Write a promotional video script for [product/service]."
-Video Generation,Cinematic sequences,"Describe a cinematic sequence showing [scene]."
-Video Generation,Motion graphics,"Outline motion graphics elements for a video about [topic]."
-Video Generation,Storyboard generation,"Create a storyboard with scenes and descriptions for [project]."
-Video Generation,Animated sequences,"Describe an animated sequence explaining [concept]."
-Video Generation,Video scriptwriting,"Write a complete video script about [topic]."
-Video Generation,Visual effects description,"Describe visual effects needed for a scene showing [action]."
-Video Generation,Scene continuity planning,"Create a continuity plan for a multi-scene video."
-
-Cartoon & Illustration,Character design,"Design a character with personality traits: [traits]."
-Cartoon & Illustration,Mascot creation,"Create a mascot concept for a brand called [name]."
-Cartoon & Illustration,Comic strip panels,"Write a 4-panel comic idea about [topic]."
-Cartoon & Illustration,Children’s book illustrations,"Describe illustration concepts for a children’s story about [topic]."
-Cartoon & Illustration,Educational illustrations,"Create illustration ideas to teach [concept]."
-Cartoon & Illustration,Caricatures,"Generate a caricature-style description of [person]."
-Cartoon & Illustration,Anime-style art,"Create an anime-style character based on [description]."
-Cartoon & Illustration,Flat vector illustrations,"Describe flat vector illustrations for [project]."
-Cartoon & Illustration,Concept sketches,"Generate rough sketch ideas for [subject]."
-Cartoon & Illustration,Sticker and emoji art,"Design sticker/emoji concepts for [theme]."
-
-Audio & Music Generation,Music composition,"Compose an original piece in the style of [genre]."
-Audio & Music Generation,Beat and rhythm creation,"Create a beat pattern for [genre]."
-Audio & Music Generation,Melody generation,"Generate a melodic idea in the key of [key]."
-Audio & Music Generation,Harmony structuring,"Suggest chord progressions for [mood]."
-Audio & Music Generation,Sound effect design,"Design a sound effect for [action]."
-Audio & Music Generation,Voice style modeling,"Describe a voice style for [character/persona]."
-Audio & Music Generation,Podcast intro and outro,"Create a podcast intro and outro script."
-Audio & Music Generation,Jingle composition,"Write lyrics and melody idea for a jingle."
-Audio & Music Generation,Background ambience creation,"Describe ambient sounds for [scene]."
-Audio & Music Generation,Audio mood matching,"Match audio style to a [mood]."
 
 Code & Software Development,Web application development,"Build a web app using [tech stack] with features: [list]."
 Code & Software Development,Mobile application development,"Design a mobile app for [purpose]."
