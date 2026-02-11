@@ -8,6 +8,8 @@ export default function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedSubcategory, setSelectedSubcategory] = useState("");
 
+  const [search, setSearch] = useState("");
+
   async function load() {
     const csvUrl = `${import.meta.env.BASE_URL}Lissafi.csv`;
     const res = await fetch(csvUrl);
@@ -50,13 +52,41 @@ export default function App() {
     ).sort((a, b) => a.localeCompare(b));
   }, [normalized, selectedCategory]);
 
-  const prompts = useMemo(() => {
+  const dropdownPrompts = useMemo(() => {
     if (!selectedCategory || !selectedSubcategory) return [];
     return normalized
       .filter((r) => r.Category === selectedCategory && r.Subcategory === selectedSubcategory)
       .map((r) => r.Prompts)
       .filter((p) => p.trim());
   }, [normalized, selectedCategory, selectedSubcategory]);
+
+  const searchResults = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    if (!q) return null;
+
+    const groups = new Map();
+
+    for (const r of normalized) {
+      const promptText = (r.Prompts ?? "").toString();
+      const hay = `${r.Category}\n${r.Subcategory}\n${promptText}`.toLowerCase();
+      if (!hay.includes(q)) continue;
+
+      if (!groups.has(r.Category)) groups.set(r.Category, new Map());
+      const subMap = groups.get(r.Category);
+      if (!subMap.has(r.Subcategory)) subMap.set(r.Subcategory, []);
+
+      if (promptText.trim()) subMap.get(r.Subcategory).push(promptText);
+    }
+
+    return Array.from(groups.entries())
+      .sort((a, b) => a[0].localeCompare(b[0]))
+      .map(([Category, subMap]) => ({
+        Category,
+        Subcategories: Array.from(subMap.entries())
+          .sort((a, b) => a[0].localeCompare(b[0]))
+          .map(([Subcategory, Prompts]) => ({ Subcategory, Prompts }))
+      }));
+  }, [normalized, search]);
 
   function showToast(msg) {
     setToast(msg);
@@ -73,6 +103,9 @@ export default function App() {
     }
   }
 
+  const showSearch = Boolean(searchResults);
+  const showDropdownPrompts = !showSearch && selectedCategory && selectedSubcategory;
+
   return (
     <div className="page">
       <div className="bg" />
@@ -84,7 +117,21 @@ export default function App() {
 
       <main className="main">
         <section className="panel">
-          <div className="panelTitle">Select</div>
+          <div className="panelTitle">Search</div>
+          <input
+            className="search"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search Category, Subcategory, Prompts..."
+            aria-label="Search"
+          />
+          <div className="hint">
+            Search works without selecting a category. Clear search to use dropdown browsing.
+          </div>
+        </section>
+
+        <section className="panel">
+          <div className="panelTitle">Browse</div>
 
           <div className="controls">
             <div className="control">
@@ -127,15 +174,59 @@ export default function App() {
           </div>
         </section>
 
-        {selectedCategory && selectedSubcategory ? (
+        {/* Search results take priority when search is non-empty */}
+        {showSearch ? (
+          <section className="panel">
+            <div className="panelTitle">Results</div>
+
+            {searchResults.length === 0 ? (
+              <div className="empty">No matches.</div>
+            ) : (
+              <div className="results">
+                {searchResults.map((g) => (
+                  <div key={g.Category} className="resultGroup">
+                    <div className="resultCat">{g.Category}</div>
+
+                    {g.Subcategories.map((s) => (
+                      <div key={`${g.Category}-${s.Subcategory}`} className="resultSub">
+                        <div className="resultSubHead">
+                          <span>{s.Subcategory}</span>
+                          <span className="rowMeta">{s.Prompts.length}</span>
+                        </div>
+
+                        <div className="cards">
+                          {s.Prompts.length === 0 ? (
+                            <div className="empty">No prompts yet.</div>
+                          ) : (
+                            s.Prompts.map((p, idx) => (
+                              <div className="card" key={`${g.Category}-${s.Subcategory}-${idx}`}>
+                                <div className="prompt">{p}</div>
+                                <button className="copy" onClick={() => copy(p)} type="button">
+                                  Copy
+                                </button>
+                              </div>
+                            ))
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            )}
+          </section>
+        ) : null}
+
+        {/* Dropdown browsing (only when search is empty) */}
+        {showDropdownPrompts ? (
           <section className="panel">
             <div className="panelTitle">Prompts</div>
 
             <div className="cards">
-              {prompts.length === 0 ? (
+              {dropdownPrompts.length === 0 ? (
                 <div className="empty">No prompts yet.</div>
               ) : (
-                prompts.map((p, idx) => (
+                dropdownPrompts.map((p, idx) => (
                   <div className="card" key={`${selectedSubcategory}-${idx}`}>
                     <div className="prompt">{p}</div>
                     <button className="copy" onClick={() => copy(p)} type="button">
@@ -150,7 +241,6 @@ export default function App() {
       </main>
 
       {toast ? <div className="toast">{toast}</div> : null}
-
       <footer className="footer footerFixed">© Lissafi</footer>
     </div>
   );
