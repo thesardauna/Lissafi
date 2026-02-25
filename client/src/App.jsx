@@ -1,45 +1,97 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import Papa from "papaparse";
 
+const norm = (v) => (v ?? "").toString().trim();
+const lower = (v) => norm(v).toLowerCase();
+
+function pickCol(headers, candidates) {
+  const map = new Map(headers.map((h) => [h.toLowerCase(), h]));
+  for (const c of candidates) if (map.has(c)) return map.get(c);
+  for (const h of headers) {
+    const hl = h.toLowerCase();
+    if (candidates.some((c) => hl.includes(c))) return h;
+  }
+  return null;
+}
+
 export default function App() {
-  const [rows, setRows] = useState([]);
+  const [rawRows, setRawRows] = useState([]);
   const [toast, setToast] = useState("");
+  const toastTimer = useRef(null);
 
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedSubcategory, setSelectedSubcategory] = useState("");
-
   const [search, setSearch] = useState("");
 
+  const [loading, setLoading] = useState(true);
+  const [err, setErr] = useState("");
+
   async function load() {
-    const csvUrl = `${import.meta.env.BASE_URL}Lissafi.csv`;
-    const res = await fetch(csvUrl);
-    if (!res.ok) throw new Error("Failed to load CSV");
-    const text = await res.text();
-    const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
-    setRows(Array.isArray(parsed.data) ? parsed.data : []);
+    setLoading(true);
+    setErr("");
+    try {
+      const csvUrl = `${import.meta.env.BASE_URL}Lissafi.csv`;
+      const res = await fetch(csvUrl, { cache: "no-store" });
+      if (!res.ok) throw new Error(`Failed to load CSV (${res.status})`);
+      const text = await res.text();
+      const parsed = Papa.parse(text, {
+        header: true,
+        skipEmptyLines: true,
+        dynamicTyping: false
+      });
+
+      if (parsed.errors?.length) {
+        // keep data but show a lightweight warning
+        console.warn("CSV parse warnings:", parsed.errors);
+      }
+      setRawRows(Array.isArray(parsed.data) ? parsed.data : []);
+    } catch (e) {
+      setErr(e?.message || "Failed to load CSV");
+      setRawRows([]);
+    } finally {
+      setLoading(false);
+    }
   }
 
   useEffect(() => {
-    load().catch(() => {});
+    load();
+    return () => window.clearTimeout(toastTimer.current);
   }, []);
 
+  // Detect header names from CSV (supports different column spellings)
+  const colMap = useMemo(() => {
+    const headers = rawRows.length ? Object.keys(rawRows[0] || {}) : [];
+    const Category = pickCol(headers, ["category"]);
+    const Subcategory = pickCol(headers, ["subcategory", "sub category", "sub-cat", "sub_cat"]);
+    const Prompts = pickCol(headers, ["prompts", "prompt", "text", "content"]);
+    return { Category, Subcategory, Prompts };
+  }, [rawRows]);
+
+  // Normalize + de-duplicate + keep stable order
   const normalized = useMemo(() => {
+    const { Category, Subcategory, Prompts } = colMap;
+    if (!Category || !Subcategory || !Prompts) return [];
+
     const seen = new Set();
-    return rows
-      .map((r) => {
-        const Category = (r.Category ?? "").toString().trim();
-        const Subcategory = (r.Subcategory ?? "").toString().trim();
-        const Prompts = (r.Prompts ?? "").toString();
-        return { Category, Subcategory, Prompts };
-      })
-      .filter((r) => r.Category && r.Subcategory)
-      .filter((r) => {
-        const key = `${r.Category}|${r.Subcategory}|${r.Prompts}`;
-        if (seen.has(key)) return false;
-        seen.add(key);
-        return true;
-      });
-  }, [rows]);
+    const out = [];
+
+    for (let i = 0; i < rawRows.length; i++) {
+      const r = rawRows[i];
+      const cat = norm(r[Category]);
+      const sub = norm(r[Subcategory]);
+      const p = (r[Prompts] ?? "").toString();
+
+      if (!cat || !sub) continue;
+
+      const key = `${cat}||${sub}||${p}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+
+      out.push({ Category: cat, Subcategory: sub, Prompts: p, _row: i + 1 });
+    }
+
+    return out;
+  }, [rawRows, colMap]);
 
   const categories = useMemo(() => {
     return Array.from(new Set(normalized.map((r) => r.Category))).sort((a, b) => a.localeCompare(b));
@@ -52,30 +104,45 @@ export default function App() {
     ).sort((a, b) => a.localeCompare(b));
   }, [normalized, selectedCategory]);
 
+  // Keep dropdown selections valid when data changes
+  useEffect(() => {
+    if (!selectedCategory) return;
+    if (!categories.includes(selectedCategory)) {
+      setSelectedCategory("");
+      setSelectedSubcategory("");
+      return;
+    }
+    if (selectedSubcategory && !subcategories.includes(selectedSubcategory)) {
+      setSelectedSubcategory("");
+    }
+  }, [categories, subcategories, selectedCategory, selectedSubcategory]);
+
   const dropdownPrompts = useMemo(() => {
     if (!selectedCategory || !selectedSubcategory) return [];
     return normalized
       .filter((r) => r.Category === selectedCategory && r.Subcategory === selectedSubcategory)
       .map((r) => r.Prompts)
-      .filter((p) => p.trim());
+      .filter((p) => norm(p));
   }, [normalized, selectedCategory, selectedSubcategory]);
 
+  // Search groups (supports multi-word search)
   const searchResults = useMemo(() => {
-    const q = search.trim().toLowerCase();
+    const q = lower(search);
     if (!q) return null;
 
+    const tokens = q.split(/\s+/).filter(Boolean);
     const groups = new Map();
 
     for (const r of normalized) {
       const promptText = (r.Prompts ?? "").toString();
       const hay = `${r.Category}\n${r.Subcategory}\n${promptText}`.toLowerCase();
-      if (!hay.includes(q)) continue;
+      if (!tokens.every((t) => hay.includes(t))) continue;
 
       if (!groups.has(r.Category)) groups.set(r.Category, new Map());
       const subMap = groups.get(r.Category);
-      if (!subMap.has(r.Subcategory)) subMap.set(r.Subcategory, []);
 
-      if (promptText.trim()) subMap.get(r.Subcategory).push(promptText);
+      if (!subMap.has(r.Subcategory)) subMap.set(r.Subcategory, []);
+      if (norm(promptText)) subMap.get(r.Subcategory).push(promptText);
     }
 
     return Array.from(groups.entries())
@@ -90,8 +157,8 @@ export default function App() {
 
   function showToast(msg) {
     setToast(msg);
-    window.clearTimeout(window.__lissafiToast);
-    window.__lissafiToast = window.setTimeout(() => setToast(""), 1600);
+    window.clearTimeout(toastTimer.current);
+    toastTimer.current = window.setTimeout(() => setToast(""), 1400);
   }
 
   async function copy(text) {
@@ -99,12 +166,38 @@ export default function App() {
       await navigator.clipboard.writeText(text);
       showToast("Copied");
     } catch {
-      showToast("Copy failed");
+      // fallback
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "true");
+        ta.style.position = "fixed";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        showToast("Copied");
+      } catch {
+        showToast("Copy failed");
+      }
     }
   }
 
   const showSearch = Boolean(searchResults);
   const showDropdownPrompts = !showSearch && selectedCategory && selectedSubcategory;
+
+  const totals = useMemo(() => {
+    return {
+      rows: normalized.length,
+      categories: categories.length
+    };
+  }, [normalized, categories]);
+
+  const badHeader = useMemo(() => {
+    const { Category, Subcategory, Prompts } = colMap;
+    return rawRows.length > 0 && (!Category || !Subcategory || !Prompts);
+  }, [rawRows, colMap]);
 
   return (
     <div className="page">
@@ -121,27 +214,29 @@ export default function App() {
 
           <div className="about">
             <p>
-              <strong>Lissafi</strong> is a curated prompt library that helps you quickly
-              discover, explore, and copy high-quality AI prompts across different
-              categories and use cases.
+              <strong>Lissafi</strong> helps you quickly discover, explore, and copy prompts by
+              category and subcategory.
             </p>
 
-            <h4>How to Use</h4>
-            <ul>
-              <li>
-                <strong>Search:</strong> Type any keyword to find prompts by category,
-                subcategory, or content.
-              </li>
-              <li>
-                <strong>Browse:</strong> Select a Category, then a Subcategory to reveal
-                related prompts.
-              </li>
-              <li>
-                <strong>Copy:</strong> Click the Copy button to use a prompt instantly.
-              </li>
-            </ul>
+            <div className="hint">
+              {loading ? "Loading prompts…" : `Loaded ${totals.rows} prompts across ${totals.categories} categories.`}
+            </div>
 
-            <p className="muted">Clear the search field to return to dropdown browsing.</p>
+            {err ? (
+              <div className="empty">
+                {err}{" "}
+                <button className="copy" type="button" onClick={load}>
+                  Retry
+                </button>
+              </div>
+            ) : null}
+
+            {badHeader ? (
+              <div className="empty">
+                CSV headers not detected. Expected something like: <strong>Category</strong>,{" "}
+                <strong>Subcategory</strong>, <strong>Prompts</strong>.
+              </div>
+            ) : null}
           </div>
         </section>
 
@@ -151,12 +246,10 @@ export default function App() {
             className="search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search Category, Subcategory, Prompts..."
+            placeholder="Search category, subcategory, prompts…"
             aria-label="Search"
           />
-          <div className="hint">
-            Search works without selecting a category. Clear search to use dropdown browsing.
-          </div>
+          <div className="hint">Tip: use multiple words (e.g. “video hook”).</div>
         </section>
 
         <section className="panel">
@@ -172,6 +265,7 @@ export default function App() {
                   setSelectedCategory(e.target.value);
                   setSelectedSubcategory("");
                 }}
+                disabled={loading || !!err || badHeader}
               >
                 <option value="">Choose a category…</option>
                 {categories.map((c) => (
@@ -187,7 +281,7 @@ export default function App() {
               <select
                 className="select"
                 value={selectedSubcategory}
-                disabled={!selectedCategory}
+                disabled={!selectedCategory || loading || !!err || badHeader}
                 onChange={(e) => setSelectedSubcategory(e.target.value)}
               >
                 <option value="">
@@ -199,6 +293,22 @@ export default function App() {
                   </option>
                 ))}
               </select>
+            </div>
+
+            <div className="control" style={{ alignSelf: "end" }}>
+              <button
+                className="copy"
+                type="button"
+                onClick={() => {
+                  setSelectedCategory("");
+                  setSelectedSubcategory("");
+                  setSearch("");
+                  showToast("Cleared");
+                }}
+                disabled={loading}
+              >
+                Clear
+              </button>
             </div>
           </div>
         </section>
@@ -247,7 +357,9 @@ export default function App() {
 
         {showDropdownPrompts ? (
           <section className="panel">
-            <div className="panelTitle">Prompts</div>
+            <div className="panelTitle">
+              Prompts <span className="rowMeta">{dropdownPrompts.length}</span>
+            </div>
 
             <div className="cards">
               {dropdownPrompts.length === 0 ? (
