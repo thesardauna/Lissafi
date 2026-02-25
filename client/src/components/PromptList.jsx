@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 function parseCsvLine(line) {
-  // Minimal CSV handling: supports commas inside quotes
   const out = [];
   let cur = "";
   let inQuotes = false;
@@ -14,18 +13,15 @@ function parseCsvLine(line) {
       i++;
       continue;
     }
-
     if (ch === '"') {
       inQuotes = !inQuotes;
       continue;
     }
-
     if (ch === "," && !inQuotes) {
       out.push(cur.trim());
       cur = "";
       continue;
     }
-
     cur += ch;
   }
   out.push(cur.trim());
@@ -42,21 +38,25 @@ export default function PromptList() {
 
     (async () => {
       try {
-        const res = await fetch("/Lissafi.csv");
+        const url = `${import.meta.env.BASE_URL}Lissafi.csv`;
+        const res = await fetch(url);
         if (!res.ok) throw new Error(`Failed to load CSV: ${res.status}`);
-        const text = await res.text();
 
+        const text = await res.text();
         const rows = text.split(/\r?\n/).filter(Boolean);
         if (rows.length <= 1) throw new Error("CSV has no data rows.");
 
-        const data = rows.slice(1).map((line) => {
-          const cols = parseCsvLine(line);
-          const category = cols[0] ?? "";
-          const title = cols[1] ?? "";
-          const prompt = cols.slice(2).join(",") ?? ""; // keep remaining commas
-          if (!title || !prompt) return null;
-          return { category, title, prompt };
-        }).filter(Boolean);
+        const data = rows
+          .slice(1)
+          .map((line) => {
+            const cols = parseCsvLine(line);
+            const category = cols[0] ?? "";
+            const title = cols[1] ?? "";
+            const prompt = cols.slice(2).join(",") ?? "";
+            if (!title || !prompt) return null;
+            return { category, title, prompt };
+          })
+          .filter(Boolean);
 
         if (alive) setPrompts(data);
       } catch (e) {
@@ -79,13 +79,15 @@ export default function PromptList() {
     <div className="prompt-grid">
       {prompts.map((p, i) => (
         <div className="prompt-card" key={`${p.title}-${i}`}>
-          {p.category ? <span className="prompt-category">{p.category}</span> : null}
+          {p.category ? (
+            <span className="prompt-category">{p.category}</span>
+          ) : null}
           <h3>{p.title}</h3>
           <p>{p.prompt}</p>
           <button
             className="btn-secondary"
-            onClick={() => navigator.clipboard.writeText(p.prompt)}
             type="button"
+            onClick={() => navigator.clipboard.writeText(p.prompt)}
           >
             Copy Prompt
           </button>
