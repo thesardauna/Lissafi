@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 
 function parseCsvLine(line) {
-  // Handles commas inside quotes + escaped quotes
   const out = [];
   let cur = "";
   let inQuotes = false;
@@ -39,8 +38,8 @@ function looksLikeHeader(row) {
   return (
     joined.includes("category") ||
     joined.includes("subcategory") ||
-    joined.includes("title") ||
     joined.includes("prompt") ||
+    joined.includes("prompts") ||
     joined.includes("text") ||
     joined.includes("content")
   );
@@ -67,13 +66,9 @@ export default function PromptList() {
 
     (async () => {
       try {
-        // Works on subfolder deploys (GitHub Pages) and root deploys (Vercel/Netlify)
         const url = `${import.meta.env.BASE_URL}Lissafi.csv`;
         const res = await fetch(url);
-
-        if (!res.ok) {
-          throw new Error(`Failed to load CSV: ${res.status}`);
-        }
+        if (!res.ok) throw new Error(`Failed to load CSV: ${res.status}`);
 
         const text = await res.text();
         const lines = text.split(/\r?\n/).filter((l) => l.trim().length > 0);
@@ -95,27 +90,22 @@ export default function PromptList() {
             const cols = parseCsvLine(line);
             if (!cols.length) return null;
 
-            // Header-driven mapping (best)
+            // Header mapping (your CSV has: Category, Subcategory, Prompts)
             if (hasHeader) {
               const obj = {};
               headers.forEach((h, i) => (obj[norm(h)] = cols[i] ?? ""));
 
-              const c =
-                obj["category"] ||
-                obj["cat"] ||
-                obj["group"] ||
-                obj["type"] ||
-                "Uncategorized";
-
+              const c = obj["category"] || obj["cat"] || "Uncategorized";
               const s =
                 obj["subcategory"] ||
                 obj["sub category"] ||
                 obj["sub_category"] ||
                 obj["subcat"] ||
-                obj["sub"] ||
                 "General";
 
+              // ✅ IMPORTANT FIX: support "prompts" column
               const p =
+                obj["prompts"] ||
                 obj["prompt"] ||
                 obj["text"] ||
                 obj["content"] ||
@@ -138,39 +128,14 @@ export default function PromptList() {
               };
             }
 
-            // No header: positional fallbacks
-            // 4+ cols => category, subcategory, title, prompt...
-            if (cols.length >= 4) {
-              const prompt = cols.slice(3).join(",").trim();
-              if (!prompt) return null;
-              return {
-                category: cols[0] || "Uncategorized",
-                subcategory: cols[1] || "General",
-                title: cols[2] || makeTitleFromPrompt(prompt),
-                prompt,
-              };
-            }
-
-            // 3 cols => category, subcategory, prompt  (most common)
-            if (cols.length === 3) {
-              const prompt = (cols[2] || "").trim();
+            // No header fallbacks
+            if (cols.length >= 3) {
+              const prompt = cols.slice(2).join(",").trim();
               if (!prompt) return null;
               return {
                 category: cols[0] || "Uncategorized",
                 subcategory: cols[1] || "General",
                 title: makeTitleFromPrompt(prompt),
-                prompt,
-              };
-            }
-
-            // 2 cols => title, prompt
-            if (cols.length === 2) {
-              const prompt = (cols[1] || "").trim();
-              if (!prompt) return null;
-              return {
-                category: "Uncategorized",
-                subcategory: "General",
-                title: cols[0] || makeTitleFromPrompt(prompt),
                 prompt,
               };
             }
@@ -208,7 +173,7 @@ export default function PromptList() {
     return Array.from(set).sort((a, b) => a.localeCompare(b));
   }, [rows, category]);
 
-  // Your rule: show prompts ONLY if search has value OR (category AND subcategory selected)
+  // Show ONLY if search has value OR (category AND subcategory selected)
   const showPrompts = useMemo(() => {
     if (search.trim().length > 0) return true;
     return Boolean(category) && Boolean(subcategory);
@@ -219,7 +184,7 @@ export default function PromptList() {
 
     const q = search.trim().toLowerCase();
 
-    // Search mode: ignore category/subcategory constraints
+    // Search mode ignores selections
     if (q.length > 0) {
       return rows.filter((r) =>
         `${r.title} ${r.prompt} ${r.category} ${r.subcategory}`
@@ -228,7 +193,7 @@ export default function PromptList() {
       );
     }
 
-    // Selection mode: must match category + subcategory
+    // Selection mode requires category + subcategory
     return rows.filter(
       (r) => r.category === category && r.subcategory === subcategory
     );
@@ -253,7 +218,7 @@ export default function PromptList() {
             className="input"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search prompts (e.g., CV, logo, business, school)..."
+            placeholder="Search prompts (e.g., text, resume, business)..."
             type="search"
           />
         </div>
@@ -266,7 +231,7 @@ export default function PromptList() {
             value={category}
             onChange={(e) => {
               setCategory(e.target.value);
-              setSubcategory(""); // force re-select
+              setSubcategory("");
             }}
           >
             <option value="">Select category</option>
