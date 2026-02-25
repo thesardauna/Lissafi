@@ -1,5 +1,5 @@
-import Hero from "./components/Hero";
-import PromptList from "./components/PromptList";
+import Hero from "./components/Hero.jsx";
+import PromptList from "./components/PromptList.jsx";
 
 export default function App() {
   return (
