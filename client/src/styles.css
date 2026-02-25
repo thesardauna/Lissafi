@@ -5,7 +5,7 @@
   --muted: #aab0d6;
   --accent: #22d3ee;
   --radius: 14px;
-  --max-width: 980px;
+  --max: 980px;
   --font: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 }
 
@@ -20,46 +20,41 @@ body {
   color: var(--text);
 }
 
-/* ---------- HERO ---------- */
+/* HERO */
 
 .hero {
-  max-width: var(--max-width);
-  margin: 0 auto;
+  max-width: var(--max);
+  margin: auto;
   padding: 96px 20px 72px;
   text-align: center;
 }
 
 .hero h1 {
   font-size: 3rem;
-  margin-bottom: 16px;
 }
 
 .hero-text {
-  font-size: 1.1rem;
   color: var(--muted);
-  max-width: 680px;
-  margin: 0 auto 16px;
+  max-width: 700px;
+  margin: 16px auto;
 }
 
 .hero-sub {
-  font-size: 1rem;
-  margin-bottom: 32px;
+  margin: 24px 0;
 }
 
 .hero-actions {
   display: flex;
   justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
 }
 
-/* ---------- BUTTONS ---------- */
+/* BUTTONS */
 
 .btn-primary {
   background: var(--accent);
   color: #000;
   border: none;
-  padding: 14px 24px;
+  padding: 14px 26px;
   border-radius: var(--radius);
   font-weight: 600;
   cursor: pointer;
@@ -67,20 +62,20 @@ body {
 
 .btn-secondary {
   background: transparent;
-  color: var(--text);
   border: 1px solid var(--accent);
-  padding: 14px 24px;
+  color: var(--text);
+  padding: 10px 16px;
   border-radius: var(--radius);
   cursor: pointer;
 }
 
-/* ---------- BENEFITS ---------- */
+/* BENEFITS */
 
 .benefits {
   display: grid;
   gap: 16px;
-  max-width: var(--max-width);
-  margin: 0 auto;
+  max-width: var(--max);
+  margin: auto;
   padding: 48px 20px;
 }
 
@@ -90,43 +85,47 @@ body {
   border-radius: var(--radius);
 }
 
-/* ---------- HOW IT WORKS ---------- */
+/* HOW IT WORKS */
 
 .how-it-works {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 48px 20px 80px;
   text-align: center;
+  padding: 48px 20px;
 }
 
-.how-it-works h2 {
-  font-size: 1.8rem;
-  margin-bottom: 24px;
+/* PROMPTS */
+
+.prompt-section {
+  max-width: var(--max);
+  margin: auto;
+  padding: 64px 20px 96px;
 }
 
-.how-it-works ol {
-  list-style: none;
-  padding: 0;
+.prompt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
 }
 
-.how-it-works li {
-  font-size: 1.1rem;
-  margin-bottom: 12px;
+.prompt-card {
+  background: var(--panel);
+  padding: 20px;
+  border-radius: var(--radius);
 }
 
-/* ---------- MOBILE ---------- */
+.prompt-category {
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+.loading {
+  text-align: center;
+  color: var(--muted);
+}
+
+/* MOBILE */
 
 @media (max-width: 640px) {
   .hero h1 {
     font-size: 2.2rem;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-  }
-
-  .btn-primary,
-  .btn-secondary {
-    width: 100%;
   }
 }
