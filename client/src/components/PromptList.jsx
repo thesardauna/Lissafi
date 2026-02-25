@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 
 function parseCsvLine(line) {
+  // Handles commas inside quotes + escaped quotes
   const out = [];
   let cur = "";
   let inQuotes = false;
@@ -24,24 +25,32 @@ function parseCsvLine(line) {
     }
     cur += ch;
   }
+
   out.push(cur.trim());
-  return out;
+  return out.map((v) => v.replace(/^"+|"+$/g, "").trim());
 }
 
 function norm(s) {
-  return String(s ?? "")
-    .trim()
-    .replace(/^"+|"+$/g, "")
-    .toLowerCase();
+  return String(s ?? "").trim().toLowerCase();
 }
 
-function pickKey(headers, candidates) {
-  const h = headers.map((x) => norm(x));
-  for (const c of candidates) {
-    const idx = h.indexOf(norm(c));
-    if (idx !== -1) return headers[idx];
-  }
-  return null;
+function looksLikeHeader(row) {
+  const joined = row.map(norm).join("|");
+  return (
+    joined.includes("category") ||
+    joined.includes("subcategory") ||
+    joined.includes("title") ||
+    joined.includes("prompt") ||
+    joined.includes("text") ||
+    joined.includes("content")
+  );
+}
+
+function makeTitleFromPrompt(prompt) {
+  const cleaned = String(prompt || "").replace(/\s+/g, " ").trim();
+  if (!cleaned) return "Untitled Prompt";
+  const words = cleaned.split(" ").slice(0, 7).join(" ");
+  return cleaned.split(" ").length > 7 ? `${words}…` : words;
 }
 
 export default function PromptList() {
@@ -58,71 +67,117 @@ export default function PromptList() {
 
     (async () => {
       try {
+        // Works on subfolder deploys (GitHub Pages) and root deploys (Vercel/Netlify)
         const url = `${import.meta.env.BASE_URL}Lissafi.csv`;
         const res = await fetch(url);
-        if (!res.ok) throw new Error(`Failed to load CSV: ${res.status}`);
+
+        if (!res.ok) {
+          throw new Error(`Failed to load CSV: ${res.status}`);
+        }
 
         const text = await res.text();
         const lines = text.split(/\r?\n/).filter((l) => l.trim().length > 0);
-        if (lines.length < 2) throw new Error("CSV has no data rows.");
+        if (!lines.length) throw new Error("CSV is empty.");
 
-        const headers = parseCsvLine(lines[0]).map((h) => h.replace(/^"+|"+$/g, "").trim());
-        const catKey = pickKey(headers, ["category", "cat"]);
-        const subKey = pickKey(headers, ["subcategory", "sub category", "sub_category", "subcat"]);
-        const titleKey = pickKey(headers, ["title", "prompt title", "name"]);
-        const promptKey = pickKey(headers, ["prompt", "text", "content", "body"]);
+        const first = parseCsvLine(lines[0]);
+        const hasHeader = looksLikeHeader(first);
 
-        const parsed = lines.slice(1).map((line) => {
-          const cols = parseCsvLine(line);
+        let headers = [];
+        let dataLines = lines;
 
-          // If headers exist, map by header index.
-          const obj = {};
-          if (headers.length && cols.length) {
-            headers.forEach((h, i) => {
-              obj[h] = cols[i] ?? "";
-            });
-          }
+        if (hasHeader) {
+          headers = first;
+          dataLines = lines.slice(1);
+        }
 
-          // Robust fallbacks if headers are not present/usable
-          const fallback = () => {
-            // common patterns:
-            // 4+ cols: category, subcategory, title, prompt...
-            // 3 cols: category, title, prompt...
+        const parsed = dataLines
+          .map((line) => {
+            const cols = parseCsvLine(line);
+            if (!cols.length) return null;
+
+            // Header-driven mapping (best)
+            if (hasHeader) {
+              const obj = {};
+              headers.forEach((h, i) => (obj[norm(h)] = cols[i] ?? ""));
+
+              const c =
+                obj["category"] ||
+                obj["cat"] ||
+                obj["group"] ||
+                obj["type"] ||
+                "Uncategorized";
+
+              const s =
+                obj["subcategory"] ||
+                obj["sub category"] ||
+                obj["sub_category"] ||
+                obj["subcat"] ||
+                obj["sub"] ||
+                "General";
+
+              const p =
+                obj["prompt"] ||
+                obj["text"] ||
+                obj["content"] ||
+                obj["body"] ||
+                "";
+
+              if (!p) return null;
+
+              const t =
+                obj["title"] ||
+                obj["name"] ||
+                obj["prompt title"] ||
+                makeTitleFromPrompt(p);
+
+              return {
+                category: String(c).trim() || "Uncategorized",
+                subcategory: String(s).trim() || "General",
+                title: String(t).trim() || makeTitleFromPrompt(p),
+                prompt: String(p).trim(),
+              };
+            }
+
+            // No header: positional fallbacks
+            // 4+ cols => category, subcategory, title, prompt...
             if (cols.length >= 4) {
+              const prompt = cols.slice(3).join(",").trim();
+              if (!prompt) return null;
               return {
-                Category: cols[0] ?? "",
-                Subcategory: cols[1] ?? "",
-                Title: cols[2] ?? "",
-                Prompt: cols.slice(3).join(",") ?? "",
+                category: cols[0] || "Uncategorized",
+                subcategory: cols[1] || "General",
+                title: cols[2] || makeTitleFromPrompt(prompt),
+                prompt,
               };
             }
+
+            // 3 cols => category, subcategory, prompt  (most common)
             if (cols.length === 3) {
+              const prompt = (cols[2] || "").trim();
+              if (!prompt) return null;
               return {
-                Category: cols[0] ?? "",
-                Title: cols[1] ?? "",
-                Prompt: cols[2] ?? "",
+                category: cols[0] || "Uncategorized",
+                subcategory: cols[1] || "General",
+                title: makeTitleFromPrompt(prompt),
+                prompt,
               };
             }
+
+            // 2 cols => title, prompt
+            if (cols.length === 2) {
+              const prompt = (cols[1] || "").trim();
+              if (!prompt) return null;
+              return {
+                category: "Uncategorized",
+                subcategory: "General",
+                title: cols[0] || makeTitleFromPrompt(prompt),
+                prompt,
+              };
+            }
+
             return null;
-          };
-
-          const row = headers.length ? obj : fallback();
-          if (!row) return null;
-
-          const c = row[catKey] ?? row.Category ?? "";
-          const s = row[subKey] ?? row.Subcategory ?? "";
-          const t = row[titleKey] ?? row.Title ?? "";
-          const p = row[promptKey] ?? row.Prompt ?? "";
-
-          if (!t || !p) return null;
-
-          return {
-            category: String(c).replace(/^"+|"+$/g, "").trim(),
-            subcategory: String(s).replace(/^"+|"+$/g, "").trim(),
-            title: String(t).replace(/^"+|"+$/g, "").trim(),
-            prompt: String(p).replace(/^"+|"+$/g, "").trim(),
-          };
-        }).filter(Boolean);
+          })
+          .filter(Boolean);
 
         if (alive) setRows(parsed);
       } catch (e) {
@@ -153,43 +208,31 @@ export default function PromptList() {
     return Array.from(set).sort((a, b) => a.localeCompare(b));
   }, [rows, category]);
 
-  const needsSubcategory = subcategories.length > 0;
-
+  // Your rule: show prompts ONLY if search has value OR (category AND subcategory selected)
   const showPrompts = useMemo(() => {
-    const q = search.trim();
-    if (q.length > 0) return true;
-    if (!category) return false;
-    if (needsSubcategory) return Boolean(subcategory);
-    return true; // if dataset has no subcategory values, category alone is enough
-  }, [search, category, subcategory, needsSubcategory]);
+    if (search.trim().length > 0) return true;
+    return Boolean(category) && Boolean(subcategory);
+  }, [search, category, subcategory]);
 
   const filtered = useMemo(() => {
     if (!showPrompts) return [];
 
     const q = search.trim().toLowerCase();
 
-    return rows.filter((r) => {
-      const matchSearch =
-        q.length === 0
-          ? true
-          : (r.title + " " + r.prompt + " " + r.category + " " + r.subcategory)
-              .toLowerCase()
-              .includes(q);
+    // Search mode: ignore category/subcategory constraints
+    if (q.length > 0) {
+      return rows.filter((r) =>
+        `${r.title} ${r.prompt} ${r.category} ${r.subcategory}`
+          .toLowerCase()
+          .includes(q)
+      );
+    }
 
-      const matchCat = category ? r.category === category : true;
-
-      const matchSub = needsSubcategory
-        ? subcategory
-          ? r.subcategory === subcategory
-          : false // must select subcategory if subcategories exist
-        : true;
-
-      // If searching, we don’t force category/subcategory
-      if (q.length > 0) return matchSearch;
-
-      return matchCat && matchSub;
-    });
-  }, [rows, search, category, subcategory, showPrompts, needsSubcategory]);
+    // Selection mode: must match category + subcategory
+    return rows.filter(
+      (r) => r.category === category && r.subcategory === subcategory
+    );
+  }, [rows, search, showPrompts, category, subcategory]);
 
   const clearFilters = () => {
     setSearch("");
@@ -210,7 +253,7 @@ export default function PromptList() {
             className="input"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search prompts (e.g., resume, logo, CV, business)..."
+            placeholder="Search prompts (e.g., CV, logo, business, school)..."
             type="search"
           />
         </div>
@@ -223,7 +266,7 @@ export default function PromptList() {
             value={category}
             onChange={(e) => {
               setCategory(e.target.value);
-              setSubcategory("");
+              setSubcategory(""); // force re-select
             }}
           >
             <option value="">Select category</option>
@@ -242,11 +285,9 @@ export default function PromptList() {
             className="select"
             value={subcategory}
             onChange={(e) => setSubcategory(e.target.value)}
-            disabled={!category || subcategories.length === 0}
+            disabled={!category}
           >
-            <option value="">
-              {subcategories.length ? "Select subcategory" : "No subcategories"}
-            </option>
+            <option value="">Select subcategory</option>
             {subcategories.map((s) => (
               <option value={s} key={s}>
                 {s}
@@ -255,7 +296,11 @@ export default function PromptList() {
           </select>
         </div>
 
-        <button className="btn-secondary clear-btn" type="button" onClick={clearFilters}>
+        <button
+          className="btn-secondary clear-btn"
+          type="button"
+          onClick={clearFilters}
+        >
           Clear
         </button>
       </div>
@@ -276,11 +321,13 @@ export default function PromptList() {
           {filtered.map((p, i) => (
             <div className="prompt-card" key={`${p.title}-${i}`}>
               <div className="meta">
-                {p.category ? <span className="prompt-category">{p.category}</span> : null}
-                {p.subcategory ? <span className="prompt-subcategory">{p.subcategory}</span> : null}
+                <span className="prompt-category">{p.category}</span>
+                <span className="prompt-subcategory">{p.subcategory}</span>
               </div>
+
               <h3>{p.title}</h3>
               <p>{p.prompt}</p>
+
               <button
                 className="btn-secondary"
                 type="button"
