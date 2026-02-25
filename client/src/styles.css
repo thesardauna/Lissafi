@@ -1,7 +1,161 @@
-/* ---- Prompt Browser Controls ---- */
+:root {
+  --bg: #0b0f19;
+  --panel: #12182a;
+  --text: #e9eeff;
+  --muted: #aab0d6;
+  --accent: #22d3ee;
+  --radius: 14px;
+  --max: 980px;
+  --font: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+}
+
+section {
+  width: 100%;
+}
+
+/* HERO */
+
+.hero {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 96px 20px 60px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0 0 18px;
+}
+
+.hero-text {
+  max-width: 760px;
+  margin: 0 auto 28px;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+}
+
+/* BUTTONS */
+
+.btn-primary {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  padding: 14px 26px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--text);
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+/* BENEFITS */
+
+.benefits {
+  display: grid;
+  gap: 16px;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.benefits div {
+  background: var(--panel);
+  padding: 20px;
+  border-radius: var(--radius);
+  line-height: 1.5;
+}
+
+/* HOW IT WORKS */
+
+.how-it-works {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.how-it-works h2 {
+  margin: 0 0 14px;
+  font-size: 1.9rem;
+}
+
+.how-it-works ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.how-it-works li {
+  margin: 4px 0;
+}
+
+/* PROMPT SECTION */
+
+.prompt-section {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 50px 20px 96px;
+}
+
+.section-head {
+  margin-bottom: 18px;
+}
+
+.section-head h2 {
+  margin: 0 0 8px;
+  font-size: 1.9rem;
+}
+
+.section-sub {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Loading / Empty */
+
+.loading {
+  color: var(--muted);
+  text-align: center;
+}
+
+.empty-state {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px dashed rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius);
+  padding: 18px;
+  color: var(--muted);
+}
+
+/* Prompt Browser Controls */
 
 .browser {
-  margin-top: 16px;
+  margin-top: 10px;
 }
 
 .controls {
@@ -25,7 +179,7 @@
   background: var(--panel);
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: var(--text);
-  padding: 12px 12px;
+  padding: 12px;
   border-radius: var(--radius);
   outline: none;
 }
@@ -39,12 +193,19 @@
   height: 44px;
 }
 
-.empty-state {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px dashed rgba(255, 255, 255, 0.14);
-  border-radius: var(--radius);
+/* Prompt Cards */
+
+.prompt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.prompt-card {
+  background: var(--panel);
   padding: 18px;
-  color: var(--muted);
+  border-radius: var(--radius);
+  line-height: 1.5;
 }
 
 .meta {
@@ -54,16 +215,32 @@
   margin-bottom: 10px;
 }
 
+.prompt-category {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
 .prompt-subcategory {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--muted);
 }
 
-/* Mobile controls */
+/* Mobile */
+
 @media (max-width: 760px) {
+  .hero {
+    padding-top: 72px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
   .controls {
     grid-template-columns: 1fr;
   }
+
   .clear-btn {
     width: 100%;
   }
