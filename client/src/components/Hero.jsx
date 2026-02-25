@@ -9,17 +9,12 @@ export default function Hero() {
 
       <p className="hero-text">
         Lissafi gives you instant access to powerful, ready-to-use prompts that
-        make your work faster, easier, and smarter.
-      </p>
-
-      <p className="hero-sub">
-        No brainstorming. No stress.
-        <br />
+        make your work faster, easier, and smarter. No brainstorming. No stress.
         Just copy, paste, and get results.
       </p>
 
       <div className="hero-actions">
-        <button className="btn-primary" onClick={goToPrompts}>
+        <button className="btn-primary" type="button" onClick={goToPrompts}>
           Explore Prompts
         </button>
       </div>
