@@ -23,7 +23,13 @@ export default function App() {
       </section>
 
       <section id="prompts" className="prompt-section">
-        <h2>Prompt Library</h2>
+        <div className="section-head">
+          <h2>Prompt Library</h2>
+          <p className="section-sub">
+            Prompts appear only when you search or select a category and subcategory.
+          </p>
+        </div>
+
         <PromptList />
       </section>
     </>
