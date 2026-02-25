@@ -1,7 +1,7 @@
 import Hero from "./components/Hero";
-import "./styles.css";
+import PromptList from "./components/PromptList";
 
-function App() {
+export default function App() {
   return (
     <>
       <Hero />
@@ -21,9 +21,10 @@ function App() {
         </ol>
       </section>
 
-      {/* Your existing prompt list/component can stay below */}
+      <section id="prompts" className="prompt-section">
+        <h2>Prompt Library</h2>
+        <PromptList />
+      </section>
     </>
   );
 }
-
-export default App;
