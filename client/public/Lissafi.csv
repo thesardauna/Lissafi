@@ -1,5 +1,4 @@
 Category,Subcategory,Prompts
-Category,Subcategory,Prompts
 Text & Language Generation,Long-form writing,Develop a 1500-word article on [topic] with clear sections logical progression and supporting examples
 Text & Language Generation,Long-form writing,Write an in-depth guide explaining [process] for beginners through advanced users
 Text & Language Generation,Long-form writing,Create a comprehensive blog post analyzing current trends in [industry]
@@ -60,7 +59,6 @@ Text & Language Generation,Grammar and syntax correction,Correct complex sentenc
 Text & Language Generation,Grammar and syntax correction,Apply professional-level grammar correction and standardization [paste text]
 Text & Language Generation,Grammar and syntax correction,Correct grammar while improving overall readability [paste text]
 Text & Language Generation,Grammar and syntax correction,Perform deep syntactic revision for accuracy and clarity [paste text]
-Category,Subcategory,Prompts
 Image / Picture Generation,Photo-realistic imagery,Create a realistic image of [subject]
 Image / Picture Generation,Photo-realistic imagery,Generate a lifelike photo of [scene]
 Image / Picture Generation,Photo-realistic imagery,Produce a high-detail realistic image of [object]
@@ -156,8 +154,6 @@ Image / Picture Generation,Logo and brand imagery,Design logo with visual ration
 Image / Picture Generation,Logo and brand imagery,Create versatile brand imagery
 Image / Picture Generation,Logo and brand imagery,Generate professional brand logo
 Image / Picture Generation,Logo and brand imagery,Create production-ready logo assets
-
-Category,Subcategory,Prompts
 Video Generation,Short-form social media videos,Create a 30-second video concept for [topic]
 Video Generation,Short-form social media videos,Write a short script for a social clip about [idea]
 Video Generation,Short-form social media videos,Generate hooks for a short video on [topic]
@@ -221,8 +217,6 @@ Video Generation,Cinematic sequences,Generate director-style treatment
 Video Generation,Cinematic sequences,Create visual motif system
 Video Generation,Cinematic sequences,Build high-detail sequence plan
 Video Generation,Cinematic sequences,Produce film-ready scene package
-
-Category,Subcategory,Prompts
 Cartoon & Illustration,Character design,Create character concept for [character]
 Cartoon & Illustration,Character design,Generate character appearance description
 Cartoon & Illustration,Character design,Design character outfit ideas
@@ -286,8 +280,6 @@ Cartoon & Illustration,Children’s book illustrations,Generate art direction no
 Cartoon & Illustration,Children’s book illustrations,Design cohesive style system
 Cartoon & Illustration,Children’s book illustrations,Create print-ready artwork
 Cartoon & Illustration,Children’s book illustrations,Produce publishing-ready illustration set
-
-Category,Subcategory,Prompts
 Audio & Music Generation,Music composition,Compose original music in [genre]
 Audio & Music Generation,Music composition,Create instrumental piece
 Audio & Music Generation,Music composition,Generate melody idea
@@ -345,105 +337,969 @@ Audio & Music Generation,Jingle composition,Create brand jingle
 Audio & Music Generation,Background ambience creation,Generate ambient soundscape
 Audio & Music Generation,Audio mood matching,Match sound to mood
 
+Code & Software Development,Web application development,Build a basic web app using [tech stack]
+Code & Software Development,Web application development,Create a web app with user authentication
+Code & Software Development,Web application development,Develop CRUD functionality for [entity]
+Code & Software Development,Web application development,Build a responsive web app interface
+Code & Software Development,Web application development,Create a role-based web application
+Code & Software Development,Web application development,Develop a full-stack web app using [tech stack]
+Code & Software Development,Web application development,Integrate third-party APIs into a web app
+Code & Software Development,Web application development,Build a scalable web application architecture
+Code & Software Development,Web application development,Implement real-time features using WebSockets
+Code & Software Development,Web application development,Create a production-ready web application
+Code & Software Development,Mobile application development,Design a simple mobile app for [purpose]
+Code & Software Development,Mobile application development,Create mobile app wireframes
+Code & Software Development,Mobile application development,Develop a basic Android or iOS app
+Code & Software Development,Mobile application development,Implement navigation and UI flows
+Code & Software Development,Mobile application development,Add authentication to a mobile app
+Code & Software Development,Mobile application development,Integrate APIs into a mobile app
+Code & Software Development,Mobile application development,Build a cross-platform mobile app
+Code & Software Development,Mobile application development,Optimize mobile app performance
+Code & Software Development,Mobile application development,Prepare mobile app for deployment
+Code & Software Development,Mobile application development,Develop a store-ready mobile application
+Code & Software Development,Backend logic creation,Create basic backend logic for [feature]
+Code & Software Development,Backend logic creation,Write server-side business logic
+Code & Software Development,Backend logic creation,Implement authentication and authorization logic
+Code & Software Development,Backend logic creation,Design service-layer architecture
+Code & Software Development,Backend logic creation,Handle validation and error management
+Code & Software Development,Backend logic creation,Implement background jobs and queues
+Code & Software Development,Backend logic creation,Create scalable backend logic
+Code & Software Development,Backend logic creation,Optimize backend processes
+Code & Software Development,Backend logic creation,Secure backend endpoints
+Code & Software Development,Backend logic creation,Build production-grade backend logic
+Code & Software Development,Frontend UI coding,Write basic frontend UI code for [page]
+Code & Software Development,Frontend UI coding,Create responsive UI components
+Code & Software Development,Frontend UI coding,Implement modern layout using CSS frameworks
+Code & Software Development,Frontend UI coding,Build reusable UI components
+Code & Software Development,Frontend UI coding,Add state management to frontend
+Code & Software Development,Frontend UI coding,Implement accessibility best practices
+Code & Software Development,Frontend UI coding,Integrate frontend with backend APIs
+Code & Software Development,Frontend UI coding,Optimize UI performance
+Code & Software Development,Frontend UI coding,Ensure cross-browser compatibility
+Code & Software Development,Frontend UI coding,Create production-ready frontend UI
+Code & Software Development,Database design,Design a simple database schema for [system]
+Code & Software Development,Database design,Create normalized database tables
+Code & Software Development,Database design,Define primary and foreign key relationships
+Code & Software Development,Database design,Optimize schema for performance
+Code & Software Development,Database design,Design indexes and constraints
+Code & Software Development,Database design,Model relational database architecture
+Code & Software Development,Database design,Design NoSQL database structure
+Code & Software Development,Database design,Plan data migrations and versioning
+Code & Software Development,Database design,Ensure data integrity and security
+Code & Software Development,Database design,Create production-ready database schema
+Code & Software Development,API development,Create basic REST API endpoints
+Code & Software Development,API development,Design API routes for [service]
+Code & Software Development,API development,Implement CRUD APIs
+Code & Software Development,API development,Add authentication to APIs
+Code & Software Development,API development,Handle API validation and errors
+Code & Software Development,API development,Document APIs using OpenAPI
+Code & Software Development,API development,Optimize API performance
+Code & Software Development,API development,Secure API endpoints
+Code & Software Development,API development,Implement versioned APIs
+Code & Software Development,API development,Build production-ready REST APIs
+Code & Software Development,Debugging and error fixing,Identify bugs in this code
+Code & Software Development,Debugging and error fixing,Fix syntax and runtime errors
+Code & Software Development,Debugging and error fixing,Resolve logic errors
+Code & Software Development,Debugging and error fixing,Debug API and integration issues
+Code & Software Development,Debugging and error fixing,Fix performance bottlenecks
+Code & Software Development,Debugging and error fixing,Handle edge-case failures
+Code & Software Development,Debugging and error fixing,Improve error handling and logging
+Code & Software Development,Debugging and error fixing,Debug production issues
+Code & Software Development,Debugging and error fixing,Write tests to prevent regressions
+Code & Software Development,Debugging and error fixing,Deliver stable bug-free code
+Code & Software Development,Code optimization,Optimize code for readability
+Code & Software Development,Code optimization,Refactor code for maintainability
+Code & Software Development,Code optimization,Improve algorithm efficiency
+Code & Software Development,Code optimization,Reduce memory and CPU usage
+Code & Software Development,Code optimization,Optimize database queries
+Code & Software Development,Code optimization,Optimize API response time
+Code & Software Development,Code optimization,Apply best performance practices
+Code & Software Development,Code optimization,Optimize for scalability
+Code & Software Development,Code optimization,Benchmark and profile code
+Code & Software Development,Code optimization,Produce high-performance optimized code
+Code & Software Development,Code documentation,Generate basic code comments
+Code & Software Development,Code documentation,Write function and class documentation
+Code & Software Development,Code documentation,Create README documentation
+Code & Software Development,Code documentation,Document APIs and interfaces
+Code & Software Development,Code documentation,Add inline documentation
+Code & Software Development,Code documentation,Generate developer-friendly docs
+Code & Software Development,Code documentation,Create onboarding documentation
+Code & Software Development,Code documentation,Standardize documentation format
+Code & Software Development,Code documentation,Ensure documentation completeness
+Code & Software Development,Code documentation,Produce professional documentation set
+Code & Software Development,Code explanation,Explain code functionality
+Code & Software Development,Code explanation,Break down code line by line
+Code & Software Development,Code explanation,Explain logic and control flow
+Code & Software Development,Code explanation,Describe data structures used
+Code & Software Development,Code explanation,Explain performance implications
+Code & Software Development,Code explanation,Explain code for beginners
+Code & Software Development,Code explanation,Explain code for advanced developers
+Code & Software Development,Code explanation,Translate code into plain English
+Code & Software Development,Code explanation,Explain edge cases and limitations
+Code & Software Development,Code explanation,Provide expert-level code analysis
 
+Data Analysis & Visualization,Data cleaning and preprocessing,Clean and prepare this dataset
+Data Analysis & Visualization,Data cleaning and preprocessing,Handle missing values and outliers
+Data Analysis & Visualization,Data cleaning and preprocessing,Standardize and normalize data
+Data Analysis & Visualization,Data cleaning and preprocessing,Encode categorical variables
+Data Analysis & Visualization,Data cleaning and preprocessing,Detect and correct data inconsistencies
+Data Analysis & Visualization,Data cleaning and preprocessing,Perform feature scaling and transformation
+Data Analysis & Visualization,Data cleaning and preprocessing,Automate data preprocessing pipeline
+Data Analysis & Visualization,Data cleaning and preprocessing,Validate data quality and integrity
+Data Analysis & Visualization,Data cleaning and preprocessing,Prepare dataset for modeling
+Data Analysis & Visualization,Data cleaning and preprocessing,Deliver production-ready cleaned dataset
+Data Analysis & Visualization,Descriptive statistics,Generate basic descriptive statistics
+Data Analysis & Visualization,Descriptive statistics,Calculate mean median and variance
+Data Analysis & Visualization,Descriptive statistics,Compute distribution summaries
+Data Analysis & Visualization,Descriptive statistics,Analyze categorical variable frequencies
+Data Analysis & Visualization,Descriptive statistics,Summarize numerical features
+Data Analysis & Visualization,Descriptive statistics,Compare descriptive metrics across groups
+Data Analysis & Visualization,Descriptive statistics,Identify skewness and kurtosis
+Data Analysis & Visualization,Descriptive statistics,Create statistical summary tables
+Data Analysis & Visualization,Descriptive statistics,Interpret descriptive statistics
+Data Analysis & Visualization,Descriptive statistics,Produce professional statistical report
+Data Analysis & Visualization,Exploratory data analysis,Perform basic EDA
+Data Analysis & Visualization,Exploratory data analysis,Visualize variable distributions
+Data Analysis & Visualization,Exploratory data analysis,Analyze correlations between variables
+Data Analysis & Visualization,Exploratory data analysis,Detect patterns and anomalies
+Data Analysis & Visualization,Exploratory data analysis,Explore relationships with target variable
+Data Analysis & Visualization,Exploratory data analysis,Segment data for deeper analysis
+Data Analysis & Visualization,Exploratory data analysis,Generate EDA visualizations
+Data Analysis & Visualization,Exploratory data analysis,Summarize EDA findings
+Data Analysis & Visualization,Exploratory data analysis,Present insights from EDA
+Data Analysis & Visualization,Exploratory data analysis,Deliver comprehensive EDA report
+Data Analysis & Visualization,Predictive modeling,Build a simple predictive model
+Data Analysis & Visualization,Predictive modeling,Select features for modeling
+Data Analysis & Visualization,Predictive modeling,Train regression or classification model
+Data Analysis & Visualization,Predictive modeling,Evaluate model performance
+Data Analysis & Visualization,Predictive modeling,Tune model hyperparameters
+Data Analysis & Visualization,Predictive modeling,Compare multiple models
+Data Analysis & Visualization,Predictive modeling,Validate model with test data
+Data Analysis & Visualization,Predictive modeling,Interpret model results
+Data Analysis & Visualization,Predictive modeling,Deploy predictive model
+Data Analysis & Visualization,Predictive modeling,Build production-ready predictive system
+Data Analysis & Visualization,Trend detection,Identify basic trends in data
+Data Analysis & Visualization,Trend detection,Analyze time series patterns
+Data Analysis & Visualization,Trend detection,Detect seasonality and cycles
+Data Analysis & Visualization,Trend detection,Apply smoothing techniques
+Data Analysis & Visualization,Trend detection,Visualize trends over time
+Data Analysis & Visualization,Trend detection,Compare trends across segments
+Data Analysis & Visualization,Trend detection,Detect trend changes and breakpoints
+Data Analysis & Visualization,Trend detection,Forecast future trends
+Data Analysis & Visualization,Trend detection,Interpret trend implications
+Data Analysis & Visualization,Trend detection,Deliver trend analysis report
+Data Analysis & Visualization,Data summarization,Summarize dataset at a high level
+Data Analysis & Visualization,Data summarization,Create concise data summaries
+Data Analysis & Visualization,Data summarization,Generate executive summary
+Data Analysis & Visualization,Data summarization,Highlight key metrics
+Data Analysis & Visualization,Data summarization,Condense large datasets
+Data Analysis & Visualization,Data summarization,Summarize data by groups
+Data Analysis & Visualization,Data summarization,Create narrative data summary
+Data Analysis & Visualization,Data summarization,Visualize summary metrics
+Data Analysis & Visualization,Data summarization,Translate data into insights
+Data Analysis & Visualization,Data summarization,Produce decision-ready summary
+Data Analysis & Visualization,Chart and graph generation,Create basic charts
+Data Analysis & Visualization,Chart and graph generation,Generate bar and line charts
+Data Analysis & Visualization,Chart and graph generation,Create scatter and box plots
+Data Analysis & Visualization,Chart and graph generation,Design comparative charts
+Data Analysis & Visualization,Chart and graph generation,Apply consistent chart styling
+Data Analysis & Visualization,Chart and graph generation,Visualize trends and distributions
+Data Analysis & Visualization,Chart and graph generation,Build interactive visualizations
+Data Analysis & Visualization,Chart and graph generation,Optimize charts for clarity
+Data Analysis & Visualization,Chart and graph generation,Prepare charts for presentation
+Data Analysis & Visualization,Chart and graph generation,Deliver publication-ready visuals
+Data Analysis & Visualization,Dashboard design,Design basic dashboard layout
+Data Analysis & Visualization,Dashboard design,Define key metrics and KPIs
+Data Analysis & Visualization,Dashboard design,Create dashboard wireframes
+Data Analysis & Visualization,Dashboard design,Build interactive dashboard
+Data Analysis & Visualization,Dashboard design,Integrate charts and filters
+Data Analysis & Visualization,Dashboard design,Optimize dashboard usability
+Data Analysis & Visualization,Dashboard design,Design real-time dashboard
+Data Analysis & Visualization,Dashboard design,Customize dashboard for stakeholders
+Data Analysis & Visualization,Dashboard design,Deploy dashboard solution
+Data Analysis & Visualization,Dashboard design,Produce production-ready dashboard
+Data Analysis & Visualization,Data comparison,Compare two datasets at high level
+Data Analysis & Visualization,Data comparison,Align datasets for comparison
+Data Analysis & Visualization,Data comparison,Compare distributions and metrics
+Data Analysis & Visualization,Data comparison,Identify similarities and differences
+Data Analysis & Visualization,Data comparison,Visualize dataset comparisons
+Data Analysis & Visualization,Data comparison,Analyze changes over time
+Data Analysis & Visualization,Data comparison,Compare segments and groups
+Data Analysis & Visualization,Data comparison,Explain comparison results
+Data Analysis & Visualization,Data comparison,Highlight key differences
+Data Analysis & Visualization,Data comparison,Deliver comparative analysis report
+Data Analysis & Visualization,Insight extraction,Extract basic insights from data
+Data Analysis & Visualization,Insight extraction,Identify key patterns and drivers
+Data Analysis & Visualization,Insight extraction,Translate analysis into insights
+Data Analysis & Visualization,Insight extraction,Highlight actionable findings
+Data Analysis & Visualization,Insight extraction,Link insights to business goals
+Data Analysis & Visualization,Insight extraction,Prioritize insights by impact
+Data Analysis & Visualization,Insight extraction,Support insights with visuals
+Data Analysis & Visualization,Insight extraction,Explain implications of insights
+Data Analysis & Visualization,Insight extraction,Create insight narrative
+Data Analysis & Visualization,Insight extraction,Deliver decision-ready insights
 
+Business & Marketing,Business model development,Develop a business model for [idea]
+Business & Marketing,Business model development,Outline revenue streams for [business]
+Business & Marketing,Business model development,Identify key partners and resources
+Business & Marketing,Business model development,Describe target customer segments
+Business & Marketing,Business model development,Create a value proposition canvas
+Business & Marketing,Business model development,Build a Business Model Canvas for [idea]
+Business & Marketing,Business model development,Analyze cost structure and profitability
+Business & Marketing,Business model development,Compare alternative business models
+Business & Marketing,Business model development,Design scalable growth model
+Business & Marketing,Business model development,Evaluate risks and assumptions
+Business & Marketing,Business model development,Develop a multi-market business model
+Business & Marketing,Business model development,Create platform-based model strategy
+Business & Marketing,Business model development,Design long-term sustainability plan
+Business & Marketing,Business model development,Integrate digital transformation elements
+Business & Marketing,Business model development,Produce investor-ready business model
 
+Business & Marketing,Marketing strategy design,Create a marketing strategy for [product]
+Business & Marketing,Marketing strategy design,Identify target audience segments
+Business & Marketing,Marketing strategy design,Define marketing goals and KPIs
+Business & Marketing,Marketing strategy design,Select key marketing channels
+Business & Marketing,Marketing strategy design,Outline messaging strategy
+Business & Marketing,Marketing strategy design,Develop integrated marketing plan
+Business & Marketing,Marketing strategy design,Create customer journey map
+Business & Marketing,Marketing strategy design,Design content marketing approach
+Business & Marketing,Marketing strategy design,Plan digital marketing mix
+Business & Marketing,Marketing strategy design,Establish performance metrics
+Business & Marketing,Marketing strategy design,Build multi-channel campaign strategy
+Business & Marketing,Marketing strategy design,Design data-driven marketing system
+Business & Marketing,Marketing strategy design,Create global market entry strategy
+Business & Marketing,Marketing strategy design,Develop competitive positioning plan
+Business & Marketing,Marketing strategy design,Produce executive-level marketing roadmap
 
-Code & Software Development,Web application development,"Build a web app using [tech stack] with features: [list]."
-Code & Software Development,Mobile application development,"Design a mobile app for [purpose]."
-Code & Software Development,Backend logic creation,"Create backend logic for [feature]."
-Code & Software Development,Frontend UI coding,"Write frontend UI code for [page]."
-Code & Software Development,Database design,"Design a database schema for [system]."
-Code & Software Development,API development,"Create REST API endpoints for [service]."
-Code & Software Development,Debugging and error fixing,"Find and fix bugs in this code: [paste code]."
-Code & Software Development,Code optimization,"Optimize this code for performance: [paste code]."
-Code & Software Development,Code documentation,"Generate documentation for this code: [paste code]."
-Code & Software Development,Code explanation,"Explain what this code does: [paste code]."
+Business & Marketing,Brand positioning,Define brand positioning
+Business & Marketing,Brand positioning,Identify unique value proposition
+Business & Marketing,Brand positioning,Describe brand personality
+Business & Marketing,Brand positioning,Define target audience perception
+Business & Marketing,Brand positioning,Create positioning statement
+Business & Marketing,Brand positioning,Analyze competitor positioning
+Business & Marketing,Brand positioning,Map brand differentiation factors
+Business & Marketing,Brand positioning,Define brand promise
+Business & Marketing,Brand positioning,Align positioning with market needs
+Business & Marketing,Brand positioning,Establish brand voice direction
+Business & Marketing,Brand positioning,Develop long-term brand strategy
+Business & Marketing,Brand positioning,Create repositioning plan
+Business & Marketing,Brand positioning,Design brand architecture
+Business & Marketing,Brand positioning,Align positioning across channels
+Business & Marketing,Brand positioning,Produce comprehensive positioning framework
 
-Data Analysis & Visualization,Data cleaning and preprocessing,"Clean and prepare this dataset: [data]."
-Data Analysis & Visualization,Descriptive statistics,"Generate descriptive statistics for this dataset."
-Data Analysis & Visualization,Exploratory data analysis,"Perform EDA and summarize insights."
-Data Analysis & Visualization,Predictive modeling,"Build a predictive model for [target]."
-Data Analysis & Visualization,Trend detection,"Identify trends in this data."
-Data Analysis & Visualization,Data summarization,"Summarize this dataset."
-Data Analysis & Visualization,Chart and graph generation,"Create charts for this dataset."
-Data Analysis & Visualization,Dashboard design,"Design a dashboard layout."
-Data Analysis & Visualization,Data comparison,"Compare two datasets."
-Data Analysis & Visualization,Insight extraction,"Extract key insights."
+Business & Marketing,Copywriting and ad text,Write ad copy
+Business & Marketing,Copywriting and ad text,Create headline options
+Business & Marketing,Copywriting and ad text,Write product description copy
+Business & Marketing,Copywriting and ad text,Generate call-to-action phrases
+Business & Marketing,Copywriting and ad text,Write social media ad text
+Business & Marketing,Copywriting and ad text,Create persuasive benefit-driven copy
+Business & Marketing,Copywriting and ad text,Write AIDA-structured advertisement
+Business & Marketing,Copywriting and ad text,Generate conversion-focused copy
+Business & Marketing,Copywriting and ad text,Adapt copy for different audiences
+Business & Marketing,Copywriting and ad text,Create storytelling-based ad text
+Business & Marketing,Copywriting and ad text,Develop multi-platform ad copy set
+Business & Marketing,Copywriting and ad text,Write long-form sales copy
+Business & Marketing,Copywriting and ad text,Create emotional persuasion copy
+Business & Marketing,Copywriting and ad text,Optimize copy for high CTR
+Business & Marketing,Copywriting and ad text,Produce campaign-ready copy package
 
-Business & Marketing,Business model development,"Develop a business model for [idea]."
-Business & Marketing,Marketing strategy design,"Create a marketing strategy for [product]."
-Business & Marketing,Brand positioning,"Define brand positioning."
-Business & Marketing,Copywriting and ad text,"Write ad copy."
-Business & Marketing,Market research synthesis,"Summarize market research."
-Business & Marketing,Customer persona creation,"Create customer personas."
-Business & Marketing,Sales funnel design,"Design a sales funnel."
-Business & Marketing,Pricing strategy development,"Suggest pricing strategy."
-Business & Marketing,Competitive analysis,"Analyze competitors."
-Business & Marketing,Campaign planning,"Plan a campaign."
+Business & Marketing,Market research synthesis,Summarize market research
+Business & Marketing,Market research synthesis,Identify key market trends
+Business & Marketing,Market research synthesis,Highlight customer insights
+Business & Marketing,Market research synthesis,Extract key findings
+Business & Marketing,Market research synthesis,Summarize competitive landscape
+Business & Marketing,Market research synthesis,Synthesize multiple research sources
+Business & Marketing,Market research synthesis,Identify opportunities and gaps
+Business & Marketing,Market research synthesis,Analyze demand drivers
+Business & Marketing,Market research synthesis,Summarize risks and barriers
+Business & Marketing,Market research synthesis,Produce executive summary
+Business & Marketing,Market research synthesis,Create strategic insights report
+Business & Marketing,Market research synthesis,Develop data-driven recommendations
+Business & Marketing,Market research synthesis,Build market outlook analysis
+Business & Marketing,Market research synthesis,Integrate qualitative and quantitative findings
+Business & Marketing,Market research synthesis,Produce decision-ready research brief
 
-Education & Training,Lesson planning,"Create a lesson plan."
-Education & Training,Curriculum design,"Design curriculum."
-Education & Training,Quiz and test creation,"Generate quiz questions."
-Education & Training,Study guide development,"Create study guide."
-Education & Training,Flashcard generation,"Generate flashcards."
-Education & Training,Course outline creation,"Create course outline."
-Education & Training,Learning objectives definition,"Define learning objectives."
-Education & Training,Practice exercise creation,"Create exercises."
-Education & Training,Skill assessment design,"Design assessment."
-Education & Training,Instructional content simplification,"Simplify content."
+Business & Marketing,Customer persona creation,Create customer personas
+Business & Marketing,Customer persona creation,Define demographic profile
+Business & Marketing,Customer persona creation,Identify goals and needs
+Business & Marketing,Customer persona creation,Describe pain points
+Business & Marketing,Customer persona creation,Outline buying behavior
+Business & Marketing,Customer persona creation,Develop detailed persona profile
+Business & Marketing,Customer persona creation,Create multiple persona segments
+Business & Marketing,Customer persona creation,Map customer journey stages
+Business & Marketing,Customer persona creation,Identify motivations and triggers
+Business & Marketing,Customer persona creation,Define communication preferences
+Business & Marketing,Customer persona creation,Build data-backed personas
+Business & Marketing,Customer persona creation,Create empathy maps
+Business & Marketing,Customer persona creation,Develop behavioral archetypes
+Business & Marketing,Customer persona creation,Align personas with strategy
+Business & Marketing,Customer persona creation,Produce marketing-ready persona set
 
-Productivity & Organization,Task list generation,"Generate task list."
-Productivity & Organization,Schedule creation,"Create schedule."
-Productivity & Organization,Project roadmap development,"Create roadmap."
-Productivity & Organization,Workflow optimization,"Optimize workflow."
-Productivity & Organization,Goal setting frameworks,"Create goal framework."
-Productivity & Organization,Meeting agenda creation,"Create agenda."
-Productivity & Organization,Time-blocking plans,"Create time blocks."
-Productivity & Organization,Documentation structuring,"Structure docs."
-Productivity & Organization,SOP development,"Create SOP."
-Productivity & Organization,Personal productivity systems,"Design productivity system."
+Business & Marketing,Sales funnel design,Design a sales funnel
+Business & Marketing,Sales funnel design,Outline funnel stages
+Business & Marketing,Sales funnel design,Define awareness tactics
+Business & Marketing,Sales funnel design,Plan lead generation methods
+Business & Marketing,Sales funnel design,Identify conversion points
+Business & Marketing,Sales funnel design,Create full funnel strategy
+Business & Marketing,Sales funnel design,Design nurture sequence
+Business & Marketing,Sales funnel design,Map content to funnel stages
+Business & Marketing,Sales funnel design,Define KPIs for each stage
+Business & Marketing,Sales funnel design,Optimize conversion flow
+Business & Marketing,Sales funnel design,Build automated funnel system
+Business & Marketing,Sales funnel design,Design multi-channel funnel
+Business & Marketing,Sales funnel design,Create retention strategy layer
+Business & Marketing,Sales funnel design,Integrate upsell and cross-sell paths
+Business & Marketing,Sales funnel design,Produce scalable funnel blueprint
 
-Creative Writing & Storytelling,Short story writing,"Write a short story."
-Creative Writing & Storytelling,Novel plotting,"Create novel plot."
-Creative Writing & Storytelling,Character backstory creation,"Write backstory."
-Creative Writing & Storytelling,World-building,"Develop world."
-Creative Writing & Storytelling,Dialogue writing,"Write dialogue."
-Creative Writing & Storytelling,Screenplay development,"Develop screenplay."
-Creative Writing & Storytelling,Song lyric writing,"Write lyrics."
-Creative Writing & Storytelling,Poetry composition,"Write poem."
-Creative Writing & Storytelling,Plot twist design,"Create plot twist."
-Creative Writing & Storytelling,Theme exploration,"Explore theme."
+Business & Marketing,Pricing strategy development,Suggest pricing strategy
+Business & Marketing,Pricing strategy development,Analyze competitor pricing
+Business & Marketing,Pricing strategy development,Identify value-based pricing
+Business & Marketing,Pricing strategy development,Define pricing tiers
+Business & Marketing,Pricing strategy development,Assess customer willingness to pay
+Business & Marketing,Pricing strategy development,Design pricing model structure
+Business & Marketing,Pricing strategy development,Create dynamic pricing plan
+Business & Marketing,Pricing strategy development,Evaluate cost-plus pricing
+Business & Marketing,Pricing strategy development,Analyze price elasticity
+Business & Marketing,Pricing strategy development,Develop premium pricing strategy
+Business & Marketing,Pricing strategy development,Create subscription pricing model
+Business & Marketing,Pricing strategy development,Design market entry pricing
+Business & Marketing,Pricing strategy development,Build discount strategy framework
+Business & Marketing,Pricing strategy development,Optimize pricing for profitability
+Business & Marketing,Pricing strategy development,Produce comprehensive pricing plan
 
-Social Media Content,Caption writing,"Write caption."
-Social Media Content,Hashtag generation,"Generate hashtags."
-Social Media Content,Content calendar planning,"Create content calendar."
-Social Media Content,Reel and TikTok scriptwriting,"Write short video script."
-Social Media Content,Thread creation,"Create thread."
-Social Media Content,Carousel post content,"Write carousel slides."
-Social Media Content,Community engagement prompts,"Create engagement questions."
-Social Media Content,Brand voice definition,"Define brand voice."
-Social Media Content,Platform-specific adaptation,"Adapt content per platform."
-Social Media Content,Trend-based content ideation,"Suggest trending ideas."
+Business & Marketing,Competitive analysis,Analyze competitors
+Business & Marketing,Competitive analysis,Identify key competitors
+Business & Marketing,Competitive analysis,Compare strengths and weaknesses
+Business & Marketing,Competitive analysis,Analyze market positioning
+Business & Marketing,Competitive analysis,Review product offerings
+Business & Marketing,Competitive analysis,Conduct SWOT analysis
+Business & Marketing,Competitive analysis,Benchmark performance indicators
+Business & Marketing,Competitive analysis,Assess competitive advantages
+Business & Marketing,Competitive analysis,Identify market gaps
+Business & Marketing,Competitive analysis,Evaluate strategic moves
+Business & Marketing,Competitive analysis,Develop competitive landscape map
+Business & Marketing,Competitive analysis,Analyze barriers to entry
+Business & Marketing,Competitive analysis,Forecast competitor responses
+Business & Marketing,Competitive analysis,Create differentiation strategy
+Business & Marketing,Competitive analysis,Produce strategic competitive report
 
-Design & Branding,Logo concept development,"Create logo concept."
-Design & Branding,Color palette selection,"Suggest color palette."
-Design & Branding,Typography pairing,"Suggest font pairs."
-Design & Branding,Brand style guide creation,"Create style guide."
-Design & Branding,UI and UX layout planning,"Plan UI/UX layout."
-Design & Branding,Wireframe generation,"Generate wireframes."
-Design & Branding,Packaging design concepts,"Create packaging ideas."
-Design & Branding,Visual hierarchy planning,"Plan hierarchy."
-Design & Branding,Design consistency checks,"Check consistency."
-Design & Branding,Accessibility-focused design,"Ensure accessibility."
+Business & Marketing,Campaign planning,Plan a campaign
+Business & Marketing,Campaign planning,Define campaign objectives
+Business & Marketing,Campaign planning,Identify target audience
+Business & Marketing,Campaign planning,Select channels and tactics
+Business & Marketing,Campaign planning,Outline key messages
+Business & Marketing,Campaign planning,Create campaign timeline
+Business & Marketing,Campaign planning,Develop content plan
+Business & Marketing,Campaign planning,Allocate budget
+Business & Marketing,Campaign planning,Define success metrics
+Business & Marketing,Campaign planning,Plan launch activities
+Business & Marketing,Campaign planning,Design integrated campaign strategy
+Business & Marketing,Campaign planning,Create multi-phase campaign plan
+Business & Marketing,Campaign planning,Develop cross-channel coordination
+Business & Marketing,Campaign planning,Optimize for engagement and conversion
+Business & Marketing,Campaign planning,Produce full campaign blueprint
 
-Prompt Engineering & Optimization,Prompt structure design,"Design structured prompt."
-Prompt Engineering & Optimization,Role-based prompting,"Create role-based prompt."
-Prompt Engineering & Optimization,Constraint definition,"Define constraints."
-Prompt Engineering & Optimization,Multi-step prompt creation,"Create multi-step prompt."
-Prompt Engineering & Optimization,Few-shot prompting,"Create few-shot examples."
-Prompt Engineering & Optimization,Zero-shot prompting,"Create zero-shot prompt."
-Prompt Engineering & Optimization,Prompt refinement,"Refine prompt."
-Prompt Engineering & Optimization,Output formatting control,"Control output format."
-Prompt Engineering & Optimization,Prompt testing and evaluation,"Test prompt."
-Prompt Engineering & Optimization,Prompt library organization,"Organize prompt library."
+Education & Training,Lesson planning,Create a basic lesson plan
+Education & Training,Lesson planning,Define lesson goals and outcomes
+Education & Training,Lesson planning,Structure lesson activities
+Education & Training,Lesson planning,Incorporate interactive elements
+Education & Training,Lesson planning,Align lesson with curriculum standards
+Education & Training,Lesson planning,Design differentiated instruction
+Education & Training,Lesson planning,Integrate assessment into lesson
+Education & Training,Lesson planning,Adapt lesson for different learning levels
+Education & Training,Lesson planning,Include teaching materials and resources
+Education & Training,Lesson planning,Produce a classroom-ready lesson plan
+Education & Training,Curriculum design,Design a basic curriculum framework
+Education & Training,Curriculum design,Define curriculum goals and scope
+Education & Training,Curriculum design,Sequence topics and modules
+Education & Training,Curriculum design,Align curriculum with standards
+Education & Training,Curriculum design,Integrate assessments and evaluations
+Education & Training,Curriculum design,Design learner-centered curriculum
+Education & Training,Curriculum design,Incorporate skills and competencies
+Education & Training,Curriculum design,Review and refine curriculum structure
+Education & Training,Curriculum design,Adapt curriculum for specific learners
+Education & Training,Curriculum design,Produce a complete curriculum document
+Education & Training,Quiz and test creation,Generate simple quiz questions
+Education & Training,Quiz and test creation,Create multiple-choice questions
+Education & Training,Quiz and test creation,Develop short-answer questions
+Education & Training,Quiz and test creation,Design formative assessments
+Education & Training,Quiz and test creation,Create summative tests
+Education & Training,Quiz and test creation,Align questions with objectives
+Education & Training,Quiz and test creation,Include varying difficulty levels
+Education & Training,Quiz and test creation,Add answer keys and explanations
+Education & Training,Quiz and test creation,Review and refine assessment items
+Education & Training,Quiz and test creation,Produce exam-ready test set
+Education & Training,Study guide development,Create a basic study guide
+Education & Training,Study guide development,Outline key topics and concepts
+Education & Training,Study guide development,Summarize lesson content
+Education & Training,Study guide development,Highlight important definitions
+Education & Training,Study guide development,Include examples and explanations
+Education & Training,Study guide development,Add practice questions
+Education & Training,Study guide development,Organize content for revision
+Education & Training,Study guide development,Adapt guide for exam preparation
+Education & Training,Study guide development,Enhance guide with visuals
+Education & Training,Study guide development,Produce learner-ready study guide
+Education & Training,Flashcard generation,Generate basic flashcards
+Education & Training,Flashcard generation,Create term and definition cards
+Education & Training,Flashcard generation,Develop concept-based flashcards
+Education & Training,Flashcard generation,Include examples on flashcards
+Education & Training,Flashcard generation,Organize flashcards by topic
+Education & Training,Flashcard generation,Create spaced-repetition flashcards
+Education & Training,Flashcard generation,Adapt flashcards for beginners
+Education & Training,Flashcard generation,Design advanced flashcards
+Education & Training,Flashcard generation,Prepare digital flashcard set
+Education & Training,Flashcard generation,Produce study-ready flashcard collection
+Education & Training,Course outline creation,Create a basic course outline
+Education & Training,Course outline creation,Define course scope and duration
+Education & Training,Course outline creation,Break course into modules
+Education & Training,Course outline creation,Sequence lessons logically
+Education & Training,Course outline creation,Align outline with objectives
+Education & Training,Course outline creation,Include assessments and milestones
+Education & Training,Course outline creation,Design learner progression path
+Education & Training,Course outline creation,Review and refine course flow
+Education & Training,Course outline creation,Adapt outline for delivery format
+Education & Training,Course outline creation,Produce a complete course outline
+Education & Training,Learning objectives definition,Define basic learning objectives
+Education & Training,Learning objectives definition,Write measurable objectives
+Education & Training,Learning objectives definition,Align objectives with outcomes
+Education & Training,Learning objectives definition,Apply Bloom’s taxonomy
+Education & Training,Learning objectives definition,Differentiate objectives by level
+Education & Training,Learning objectives definition,Review clarity and relevance
+Education & Training,Learning objectives definition,Link objectives to assessments
+Education & Training,Learning objectives definition,Adapt objectives for learners
+Education & Training,Learning objectives definition,Refine objectives for clarity
+Education & Training,Learning objectives definition,Produce outcome-ready objectives
+Education & Training,Practice exercise creation,Create basic practice exercises
+Education & Training,Practice exercise creation,Design guided practice activities
+Education & Training,Practice exercise creation,Create independent exercises
+Education & Training,Practice exercise creation,Include problem-solving tasks
+Education & Training,Practice exercise creation,Vary difficulty levels
+Education & Training,Practice exercise creation,Align exercises with objectives
+Education & Training,Practice exercise creation,Provide solutions and feedback
+Education & Training,Practice exercise creation,Adapt exercises for learners
+Education & Training,Practice exercise creation,Create exam-style practice tasks
+Education & Training,Practice exercise creation,Produce classroom-ready exercises
+Education & Training,Skill assessment design,Design a basic assessment
+Education & Training,Skill assessment design,Define assessment criteria
+Education & Training,Skill assessment design,Create rubrics for evaluation
+Education & Training,Skill assessment design,Align assessment with skills
+Education & Training,Skill assessment design,Design formative skill checks
+Education & Training,Skill assessment design,Create summative skill assessment
+Education & Training,Skill assessment design,Ensure fairness and validity
+Education & Training,Skill assessment design,Review assessment effectiveness
+Education & Training,Skill assessment design,Adapt assessment for learners
+Education & Training,Skill assessment design,Produce skill-ready assessment tool
+Education & Training,Instructional content simplification,Simplify complex content
+Education & Training,Instructional content simplification,Rewrite content in plain language
+Education & Training,Instructional content simplification,Break content into steps
+Education & Training,Instructional content simplification,Use examples and analogies
+Education & Training,Instructional content simplification,Adapt content for beginners
+Education & Training,Instructional content simplification,Remove unnecessary jargon
+Education & Training,Instructional content simplification,Improve clarity and flow
+Education & Training,Instructional content simplification,Adjust content for learning level
+Education & Training,Instructional content simplification,Enhance comprehension and retention
+Education & Training,Instructional content simplification,Produce learner-friendly content
+Productivity & Organization,Task list generation,Generate a basic task list
+Productivity & Organization,Task list generation,Break goals into actionable tasks
+Productivity & Organization,Task list generation,Prioritize tasks by importance
+Productivity & Organization,Task list generation,Organize tasks by category
+Productivity & Organization,Task list generation,Estimate task durations
+Productivity & Organization,Task list generation,Create daily task list
+Productivity & Organization,Task list generation,Create weekly task plan
+Productivity & Organization,Task list generation,Optimize task order for efficiency
+Productivity & Organization,Task list generation,Track task dependencies
+Productivity & Organization,Task list generation,Produce execution-ready task list
+Productivity & Organization,Schedule creation,Create a basic schedule
+Productivity & Organization,Schedule creation,Design daily schedule
+Productivity & Organization,Schedule creation,Create weekly schedule
+Productivity & Organization,Schedule creation,Allocate time for tasks
+Productivity & Organization,Schedule creation,Balance workload across time
+Productivity & Organization,Schedule creation,Adjust schedule for priorities
+Productivity & Organization,Schedule creation,Optimize schedule for productivity
+Productivity & Organization,Schedule creation,Incorporate breaks and buffers
+Productivity & Organization,Schedule creation,Adapt schedule for flexibility
+Productivity & Organization,Schedule creation,Produce productivity-ready schedule
+Productivity & Organization,Project roadmap development,Create a basic project roadmap
+Productivity & Organization,Project roadmap development,Define project milestones
+Productivity & Organization,Project roadmap development,Sequence project phases
+Productivity & Organization,Project roadmap development,Align roadmap with goals
+Productivity & Organization,Project roadmap development,Estimate timelines and deliverables
+Productivity & Organization,Project roadmap development,Identify risks and dependencies
+Productivity & Organization,Project roadmap development,Visualize roadmap stages
+Productivity & Organization,Project roadmap development,Update roadmap dynamically
+Productivity & Organization,Project roadmap development,Prepare stakeholder roadmap
+Productivity & Organization,Project roadmap development,Produce execution-ready project roadmap
+Productivity & Organization,Workflow optimization,Analyze existing workflow
+Productivity & Organization,Workflow optimization,Identify bottlenecks and inefficiencies
+Productivity & Organization,Workflow optimization,Simplify workflow steps
+Productivity & Organization,Workflow optimization,Automate repetitive tasks
+Productivity & Organization,Workflow optimization,Redesign workflow for efficiency
+Productivity & Organization,Workflow optimization,Standardize workflow processes
+Productivity & Organization,Workflow optimization,Improve collaboration flow
+Productivity & Organization,Workflow optimization,Optimize workflow performance
+Productivity & Organization,Workflow optimization,Measure workflow improvements
+Productivity & Organization,Workflow optimization,Deliver optimized workflow system
+Productivity & Organization,Goal setting frameworks,Create simple goal framework
+Productivity & Organization,Goal setting frameworks,Define short-term and long-term goals
+Productivity & Organization,Goal setting frameworks,Apply SMART goal framework
+Productivity & Organization,Goal setting frameworks,Break goals into milestones
+Productivity & Organization,Goal setting frameworks,Align goals with priorities
+Productivity & Organization,Goal setting frameworks,Track goal progress
+Productivity & Organization,Goal setting frameworks,Review and refine goals
+Productivity & Organization,Goal setting frameworks,Adapt goals to constraints
+Productivity & Organization,Goal setting frameworks,Optimize goal achievement plan
+Productivity & Organization,Goal setting frameworks,Produce actionable goal framework
+Productivity & Organization,Meeting agenda creation,Create a basic meeting agenda
+Productivity & Organization,Meeting agenda creation,Define meeting objectives
+Productivity & Organization,Meeting agenda creation,List agenda topics and timings
+Productivity & Organization,Meeting agenda creation,Assign discussion owners
+Productivity & Organization,Meeting agenda creation,Structure agenda for efficiency
+Productivity & Organization,Meeting agenda creation,Include decision points
+Productivity & Organization,Meeting agenda creation,Prepare agenda for stakeholders
+Productivity & Organization,Meeting agenda creation,Optimize agenda for outcomes
+Productivity & Organization,Meeting agenda creation,Adapt agenda for meeting type
+Productivity & Organization,Meeting agenda creation,Produce meeting-ready agenda
+Productivity & Organization,Time-blocking plans,Create basic time-blocking plan
+Productivity & Organization,Time-blocking plans,Allocate time blocks for tasks
+Productivity & Organization,Time-blocking plans,Design daily time blocks
+Productivity & Organization,Time-blocking plans,Plan deep work sessions
+Productivity & Organization,Time-blocking plans,Balance work and rest blocks
+Productivity & Organization,Time-blocking plans,Adjust blocks for priorities
+Productivity & Organization,Time-blocking plans,Optimize time-block efficiency
+Productivity & Organization,Time-blocking plans,Create weekly time-block plan
+Productivity & Organization,Time-blocking plans,Adapt plan for flexibility
+Productivity & Organization,Time-blocking plans,Produce productivity-ready time-block system
+Productivity & Organization,Documentation structuring,Structure basic documentation
+Productivity & Organization,Documentation structuring,Organize documents by sections
+Productivity & Organization,Documentation structuring,Create clear document hierarchy
+Productivity & Organization,Documentation structuring,Standardize document formatting
+Productivity & Organization,Documentation structuring,Improve document clarity
+Productivity & Organization,Documentation structuring,Design templates for documentation
+Productivity & Organization,Documentation structuring,Optimize docs for readability
+Productivity & Organization,Documentation structuring,Align docs with workflows
+Productivity & Organization,Documentation structuring,Prepare documentation for teams
+Productivity & Organization,Documentation structuring,Produce structured documentation system
+Productivity & Organization,SOP development,Create basic standard operating procedure
+Productivity & Organization,SOP development,Define SOP purpose and scope
+Productivity & Organization,SOP development,Document step-by-step procedures
+Productivity & Organization,SOP development,Standardize processes and roles
+Productivity & Organization,SOP development,Include quality and compliance checks
+Productivity & Organization,SOP development,Review and refine SOP
+Productivity & Organization,SOP development,Adapt SOP for different teams
+Productivity & Organization,SOP development,Ensure clarity and consistency
+Productivity & Organization,SOP development,Prepare SOP for implementation
+Productivity & Organization,SOP development,Produce production-ready SOP document
+Productivity & Organization,Personal productivity systems,Design simple productivity system
+Productivity & Organization,Personal productivity systems,Assess personal work habits
+Productivity & Organization,Personal productivity systems,Select productivity methods
+Productivity & Organization,Personal productivity systems,Integrate tools and routines
+Productivity & Organization,Personal productivity systems,Design daily productivity workflow
+Productivity & Organization,Personal productivity systems,Optimize focus and energy
+Productivity & Organization,Personal productivity systems,Track productivity metrics
+Productivity & Organization,Personal productivity systems,Refine system over time
+Productivity & Organization,Personal productivity systems,Adapt system to lifestyle
+Productivity & Organization,Personal productivity systems,Produce personalized productivity system
+
+Creative Writing & Storytelling,Short story writing,Write a basic short story
+Creative Writing & Storytelling,Short story writing,Create a short story with a clear beginning middle and end
+Creative Writing & Storytelling,Short story writing,Write a character-driven short story
+Creative Writing & Storytelling,Short story writing,Develop a conflict-focused short story
+Creative Writing & Storytelling,Short story writing,Write a short story in a specific genre
+Creative Writing & Storytelling,Short story writing,Incorporate a strong narrative voice
+Creative Writing & Storytelling,Short story writing,Build tension and pacing in a short story
+Creative Writing & Storytelling,Short story writing,Write a short story with a twist ending
+Creative Writing & Storytelling,Short story writing,Revise and polish a short story
+Creative Writing & Storytelling,Short story writing,Produce publication-ready short story
+Creative Writing & Storytelling,Novel plotting,Create a basic novel plot
+Creative Writing & Storytelling,Novel plotting,Define the main conflict and stakes
+Creative Writing & Storytelling,Novel plotting,Outline major plot points
+Creative Writing & Storytelling,Novel plotting,Structure plot using three-act structure
+Creative Writing & Storytelling,Novel plotting,Develop subplot arcs
+Creative Writing & Storytelling,Novel plotting,Plan character arcs across the novel
+Creative Writing & Storytelling,Novel plotting,Design pacing across chapters
+Creative Writing & Storytelling,Novel plotting,Refine plot consistency and logic
+Creative Writing & Storytelling,Novel plotting,Adapt plot to a specific genre
+Creative Writing & Storytelling,Novel plotting,Produce a complete novel outline
+Creative Writing & Storytelling,Character backstory creation,Write a basic character backstory
+Creative Writing & Storytelling,Character backstory creation,Define character motivations and goals
+Creative Writing & Storytelling,Character backstory creation,Explore formative life events
+Creative Writing & Storytelling,Character backstory creation,Develop strengths flaws and fears
+Creative Writing & Storytelling,Character backstory creation,Connect backstory to present conflict
+Creative Writing & Storytelling,Character backstory creation,Create psychologically realistic backstory
+Creative Writing & Storytelling,Character backstory creation,Align backstory with story theme
+Creative Writing & Storytelling,Character backstory creation,Write concise usable backstory
+Creative Writing & Storytelling,Character backstory creation,Adapt backstory for genre
+Creative Writing & Storytelling,Character backstory creation,Produce story-ready character profile
+Creative Writing & Storytelling,World-building,Develop a basic fictional world
+Creative Writing & Storytelling,World-building,Define setting geography and environment
+Creative Writing & Storytelling,World-building,Create cultural and social systems
+Creative Writing & Storytelling,World-building,Design political and power structures
+Creative Writing & Storytelling,World-building,Develop history and lore
+Creative Writing & Storytelling,World-building,Establish rules and limitations of the world
+Creative Writing & Storytelling,World-building,Ensure internal consistency
+Creative Writing & Storytelling,World-building,Integrate world-building into narrative
+Creative Writing & Storytelling,World-building,Adapt world to genre requirements
+Creative Writing & Storytelling,World-building,Produce immersive story world
+Creative Writing & Storytelling,Dialogue writing,Write basic dialogue
+Creative Writing & Storytelling,Dialogue writing,Create natural-sounding conversations
+Creative Writing & Storytelling,Dialogue writing,Develop character voice through dialogue
+Creative Writing & Storytelling,Dialogue writing,Use dialogue to advance plot
+Creative Writing & Storytelling,Dialogue writing,Write subtext-driven dialogue
+Creative Writing & Storytelling,Dialogue writing,Balance dialogue and narration
+Creative Writing & Storytelling,Dialogue writing,Refine dialogue pacing and rhythm
+Creative Writing & Storytelling,Dialogue writing,Avoid exposition-heavy dialogue
+Creative Writing & Storytelling,Dialogue writing,Edit dialogue for clarity and impact
+Creative Writing & Storytelling,Dialogue writing,Produce polished story dialogue
+Creative Writing & Storytelling,Screenplay development,Develop a basic screenplay idea
+Creative Writing & Storytelling,Screenplay development,Write a screenplay outline
+Creative Writing & Storytelling,Screenplay development,Structure screenplay acts and scenes
+Creative Writing & Storytelling,Screenplay development,Write screenplay dialogue and action
+Creative Writing & Storytelling,Screenplay development,Format screenplay correctly
+Creative Writing & Storytelling,Screenplay development,Develop character arcs for screen
+Creative Writing & Storytelling,Screenplay development,Build visual storytelling elements
+Creative Writing & Storytelling,Screenplay development,Refine pacing and scene transitions
+Creative Writing & Storytelling,Screenplay development,Revise screenplay draft
+Creative Writing & Storytelling,Screenplay development,Produce submission-ready screenplay
+Creative Writing & Storytelling,Song lyric writing,Write simple song lyrics
+Creative Writing & Storytelling,Song lyric writing,Develop lyrics around a theme
+Creative Writing & Storytelling,Song lyric writing,Write verse and chorus structure
+Creative Writing & Storytelling,Song lyric writing,Create emotional and relatable lyrics
+Creative Writing & Storytelling,Song lyric writing,Use rhyme and rhythm effectively
+Creative Writing & Storytelling,Song lyric writing,Write lyrics for a specific genre
+Creative Writing & Storytelling,Song lyric writing,Enhance imagery and metaphor
+Creative Writing & Storytelling,Song lyric writing,Refine lyrics for flow
+Creative Writing & Storytelling,Song lyric writing,Adapt lyrics to melody
+Creative Writing & Storytelling,Song lyric writing,Produce performance-ready lyrics
+Creative Writing & Storytelling,Poetry composition,Write a basic poem
+Creative Writing & Storytelling,Poetry composition,Explore poetic themes and emotions
+Creative Writing & Storytelling,Poetry composition,Use imagery and figurative language
+Creative Writing & Storytelling,Poetry composition,Experiment with poetic forms
+Creative Writing & Storytelling,Poetry composition,Develop rhythm and sound devices
+Creative Writing & Storytelling,Poetry composition,Write free verse poetry
+Creative Writing & Storytelling,Poetry composition,Refine tone and voice
+Creative Writing & Storytelling,Poetry composition,Edit poem for clarity and impact
+Creative Writing & Storytelling,Poetry composition,Polish poem for submission
+Creative Writing & Storytelling,Poetry composition,Produce publication-ready poem
+Creative Writing & Storytelling,Plot twist design,Create a basic plot twist
+Creative Writing & Storytelling,Plot twist design,Design twist that fits the story
+Creative Writing & Storytelling,Plot twist design,Use foreshadowing effectively
+Creative Writing & Storytelling,Plot twist design,Ensure twist is logical and surprising
+Creative Writing & Storytelling,Plot twist design,Develop character-driven twists
+Creative Writing & Storytelling,Plot twist design,Design mid-story twist
+Creative Writing & Storytelling,Plot twist design,Create climax-level twist
+Creative Writing & Storytelling,Plot twist design,Avoid predictable twists
+Creative Writing & Storytelling,Plot twist design,Refine twist for maximum impact
+Creative Writing & Storytelling,Plot twist design,Produce story-defining plot twist
+Creative Writing & Storytelling,Theme exploration,Identify central story theme
+Creative Writing & Storytelling,Theme exploration,Explore theme through characters
+Creative Writing & Storytelling,Theme exploration,Integrate theme into plot events
+Creative Writing & Storytelling,Theme exploration,Use symbolism to reinforce theme
+Creative Writing & Storytelling,Theme exploration,Develop thematic contrasts
+Creative Writing & Storytelling,Theme exploration,Maintain thematic consistency
+Creative Writing & Storytelling,Theme exploration,Deepen emotional resonance of theme
+Creative Writing & Storytelling,Theme exploration,Refine theme expression
+Creative Writing & Storytelling,Theme exploration,Adapt theme for audience
+Creative Writing & Storytelling,Theme exploration,Produce thematically cohesive story
+
+Social Media Content,Caption writing,Write a basic social media caption
+Social Media Content,Caption writing,Write a caption for a specific post type
+Social Media Content,Caption writing,Create an engaging caption with call to action
+Social Media Content,Caption writing,Write caption aligned with brand tone
+Social Media Content,Caption writing,Optimize caption for audience engagement
+Social Media Content,Caption writing,Write short-form caption
+Social Media Content,Caption writing,Write long-form storytelling caption
+Social Media Content,Caption writing,Include emojis and formatting effectively
+Social Media Content,Caption writing,Adapt caption for campaign goals
+Social Media Content,Caption writing,Produce platform-ready caption
+Social Media Content,Hashtag generation,Generate basic hashtags
+Social Media Content,Hashtag generation,Create niche-specific hashtags
+Social Media Content,Hashtag generation,Generate trending hashtags
+Social Media Content,Hashtag generation,Optimize hashtag mix for reach
+Social Media Content,Hashtag generation,Create branded hashtags
+Social Media Content,Hashtag generation,Group hashtags by relevance
+Social Media Content,Hashtag generation,Limit hashtags for best performance
+Social Media Content,Hashtag generation,Adapt hashtags per platform
+Social Media Content,Hashtag generation,Analyze hashtag effectiveness
+Social Media Content,Hashtag generation,Produce engagement-optimized hashtag set
+Social Media Content,Content calendar planning,Create basic content calendar
+Social Media Content,Content calendar planning,Plan weekly posting schedule
+Social Media Content,Content calendar planning,Design monthly content calendar
+Social Media Content,Content calendar planning,Align content with goals
+Social Media Content,Content calendar planning,Balance content types
+Social Media Content,Content calendar planning,Include campaigns and launches
+Social Media Content,Content calendar planning,Schedule posts by platform
+Social Media Content,Content calendar planning,Optimize posting frequency
+Social Media Content,Content calendar planning,Adapt calendar to analytics
+Social Media Content,Content calendar planning,Produce execution-ready content calendar
+Social Media Content,Reel and TikTok scriptwriting,Write basic short video script
+Social Media Content,Reel and TikTok scriptwriting,Create hook-driven opening
+Social Media Content,Reel and TikTok scriptwriting,Structure script with beats
+Social Media Content,Reel and TikTok scriptwriting,Write script for specific trend
+Social Media Content,Reel and TikTok scriptwriting,Include call to action
+Social Media Content,Reel and TikTok scriptwriting,Optimize script for retention
+Social Media Content,Reel and TikTok scriptwriting,Adapt script for brand voice
+Social Media Content,Reel and TikTok scriptwriting,Write educational short-form script
+Social Media Content,Reel and TikTok scriptwriting,Refine pacing and transitions
+Social Media Content,Reel and TikTok scriptwriting,Produce post-ready video script
+Social Media Content,Thread creation,Create a basic social media thread
+Social Media Content,Thread creation,Outline thread structure
+Social Media Content,Thread creation,Write hook tweet or post
+Social Media Content,Thread creation,Develop value-driven thread content
+Social Media Content,Thread creation,Maintain logical flow across thread
+Social Media Content,Thread creation,Use storytelling in thread
+Social Media Content,Thread creation,Optimize thread for engagement
+Social Media Content,Thread creation,Include calls to action
+Social Media Content,Thread creation,Edit thread for clarity and impact
+Social Media Content,Thread creation,Produce publish-ready thread
+Social Media Content,Carousel post content,Write basic carousel slide text
+Social Media Content,Carousel post content,Define key message per slide
+Social Media Content,Carousel post content,Create hook slide
+Social Media Content,Carousel post content,Structure educational carousel
+Social Media Content,Carousel post content,Write concise slide copy
+Social Media Content,Carousel post content,Align slides with brand voice
+Social Media Content,Carousel post content,Design narrative flow across slides
+Social Media Content,Carousel post content,Optimize carousel for swiping
+Social Media Content,Carousel post content,Include CTA slide
+Social Media Content,Carousel post content,Produce post-ready carousel copy
+Social Media Content,Community engagement prompts,Create simple engagement question
+Social Media Content,Community engagement prompts,Write poll and question prompts
+Social Media Content,Community engagement prompts,Design conversation starters
+Social Media Content,Community engagement prompts,Encourage comments and replies
+Social Media Content,Community engagement prompts,Align prompts with brand values
+Social Media Content,Community engagement prompts,Create interactive challenges
+Social Media Content,Community engagement prompts,Adapt prompts for platform
+Social Media Content,Community engagement prompts,Analyze engagement performance
+Social Media Content,Community engagement prompts,Refine prompts for interaction
+Social Media Content,Community engagement prompts,Produce engagement-ready prompt set
+Social Media Content,Brand voice definition,Define basic brand voice
+Social Media Content,Brand voice definition,Identify brand tone and personality
+Social Media Content,Brand voice definition,Create voice guidelines
+Social Media Content,Brand voice definition,Align voice with audience
+Social Media Content,Brand voice definition,Define do and dont rules
+Social Media Content,Brand voice definition,Apply voice across content types
+Social Media Content,Brand voice definition,Refine consistency of voice
+Social Media Content,Brand voice definition,Adapt voice for platforms
+Social Media Content,Brand voice definition,Document brand voice standards
+Social Media Content,Brand voice definition,Produce brand voice playbook
+Social Media Content,Platform-specific adaptation,Adapt content for Instagram
+Social Media Content,Platform-specific adaptation,Adapt content for Twitter or X
+Social Media Content,Platform-specific adaptation,Adapt content for Facebook
+Social Media Content,Platform-specific adaptation,Adapt content for TikTok
+Social Media Content,Platform-specific adaptation,Adapt content for LinkedIn
+Social Media Content,Platform-specific adaptation,Optimize format per platform
+Social Media Content,Platform-specific adaptation,Adjust tone per platform
+Social Media Content,Platform-specific adaptation,Resize and restructure content
+Social Media Content,Platform-specific adaptation,Test platform performance
+Social Media Content,Platform-specific adaptation,Produce platform-optimized content
+Social Media Content,Trend-based content ideation,Identify current social media trends
+Social Media Content,Trend-based content ideation,Generate trend-based post ideas
+Social Media Content,Trend-based content ideation,Adapt trends to brand niche
+Social Media Content,Trend-based content ideation,Create content from trending audio
+Social Media Content,Trend-based content ideation,Ideate viral content concepts
+Social Media Content,Trend-based content ideation,Align trends with campaign goals
+Social Media Content,Trend-based content ideation,Filter trends for relevance
+Social Media Content,Trend-based content ideation,Refresh ideas regularly
+Social Media Content,Trend-based content ideation,Test trend performance
+Social Media Content,Trend-based content ideation,Produce trend-ready content ideas
+
+Design & Branding,Logo concept development,Create a basic logo concept
+Design & Branding,Logo concept development,Generate multiple logo ideas
+Design & Branding,Logo concept development,Design logo aligned with brand values
+Design & Branding,Logo concept development,Explore symbol and wordmark options
+Design & Branding,Logo concept development,Create logo concepts for different styles
+Design & Branding,Logo concept development,Refine selected logo concept
+Design & Branding,Logo concept development,Test logo scalability and readability
+Design & Branding,Logo concept development,Adapt logo for different use cases
+Design & Branding,Logo concept development,Prepare logo variations
+Design & Branding,Logo concept development,Produce brand-ready logo concept
+Design & Branding,Color palette selection,Suggest a basic color palette
+Design & Branding,Color palette selection,Generate palette based on brand mood
+Design & Branding,Color palette selection,Create primary and secondary colors
+Design & Branding,Color palette selection,Ensure color harmony and balance
+Design & Branding,Color palette selection,Test palette for contrast and readability
+Design & Branding,Color palette selection,Adapt palette for digital and print
+Design & Branding,Color palette selection,Align colors with brand personality
+Design & Branding,Color palette selection,Refine palette consistency
+Design & Branding,Color palette selection,Document color usage rules
+Design & Branding,Color palette selection,Produce final brand color palette
+Design & Branding,Typography pairing,Suggest basic font pairings
+Design & Branding,Typography pairing,Match fonts to brand tone
+Design & Branding,Typography pairing,Pair heading and body fonts
+Design & Branding,Typography pairing,Ensure readability across sizes
+Design & Branding,Typography pairing,Test typography hierarchy
+Design & Branding,Typography pairing,Adapt fonts for digital use
+Design & Branding,Typography pairing,Adapt fonts for print use
+Design & Branding,Typography pairing,Ensure cross-platform compatibility
+Design & Branding,Typography pairing,Refine typography consistency
+Design & Branding,Typography pairing,Produce typography-ready font system
+Design & Branding,Brand style guide creation,Create a basic brand style guide
+Design & Branding,Brand style guide creation,Define brand visual principles
+Design & Branding,Brand style guide creation,Document logo usage rules
+Design & Branding,Brand style guide creation,Include color and typography guidelines
+Design & Branding,Brand style guide creation,Define imagery and icon style
+Design & Branding,Brand style guide creation,Add layout and spacing rules
+Design & Branding,Brand style guide creation,Ensure consistency across materials
+Design & Branding,Brand style guide creation,Adapt guide for teams
+Design & Branding,Brand style guide creation,Refine guide for clarity
+Design & Branding,Brand style guide creation,Produce complete brand style guide
+Design & Branding,UI and UX layout planning,Plan basic UI layout
+Design & Branding,UI and UX layout planning,Define user flow and navigation
+Design & Branding,UI and UX layout planning,Design screen layouts
+Design & Branding,UI and UX layout planning,Apply UX best practices
+Design & Branding,UI and UX layout planning,Optimize layout for usability
+Design & Branding,UI and UX layout planning,Design responsive layouts
+Design & Branding,UI and UX layout planning,Align UI with brand style
+Design & Branding,UI and UX layout planning,Test layout assumptions
+Design & Branding,UI and UX layout planning,Refine layout based on feedback
+Design & Branding,UI and UX layout planning,Produce implementation-ready UI/UX layout
+Design & Branding,Wireframe generation,Create basic wireframes
+Design & Branding,Wireframe generation,Design low-fidelity wireframes
+Design & Branding,Wireframe generation,Map content placement
+Design & Branding,Wireframe generation,Define interactions and flows
+Design & Branding,Wireframe generation,Create mid-fidelity wireframes
+Design & Branding,Wireframe generation,Align wireframes with UX goals
+Design & Branding,Wireframe generation,Review wireframes for usability
+Design & Branding,Wireframe generation,Iterate wireframes based on feedback
+Design & Branding,Wireframe generation,Prepare wireframes for design handoff
+Design & Branding,Wireframe generation,Produce development-ready wireframes
+Design & Branding,Packaging design concepts,Create basic packaging ideas
+Design & Branding,Packaging design concepts,Explore packaging styles and formats
+Design & Branding,Packaging design concepts,Design packaging aligned with brand
+Design & Branding,Packaging design concepts,Consider materials and sustainability
+Design & Branding,Packaging design concepts,Design packaging hierarchy and layout
+Design & Branding,Packaging design concepts,Apply branding and labeling rules
+Design & Branding,Packaging design concepts,Test packaging visual impact
+Design & Branding,Packaging design concepts,Refine packaging concept
+Design & Branding,Packaging design concepts,Adapt packaging for production
+Design & Branding,Packaging design concepts,Produce market-ready packaging concept
+Design & Branding,Visual hierarchy planning,Plan basic visual hierarchy
+Design & Branding,Visual hierarchy planning,Define focal points
+Design & Branding,Visual hierarchy planning,Use size and contrast effectively
+Design & Branding,Visual hierarchy planning,Organize content by importance
+Design & Branding,Visual hierarchy planning,Apply hierarchy to layouts
+Design & Branding,Visual hierarchy planning,Test hierarchy for clarity
+Design & Branding,Visual hierarchy planning,Refine hierarchy consistency
+Design & Branding,Visual hierarchy planning,Adapt hierarchy for different formats
+Design & Branding,Visual hierarchy planning,Optimize hierarchy for usability
+Design & Branding,Visual hierarchy planning,Produce clear visual hierarchy system
+Design & Branding,Design consistency checks,Check basic design consistency
+Design & Branding,Design consistency checks,Review color and typography usage
+Design & Branding,Design consistency checks,Identify inconsistencies across assets
+Design & Branding,Design consistency checks,Align designs with style guide
+Design & Branding,Design consistency checks,Standardize layout patterns
+Design & Branding,Design consistency checks,Review spacing and alignment
+Design & Branding,Design consistency checks,Test consistency across platforms
+Design & Branding,Design consistency checks,Document consistency issues
+Design & Branding,Design consistency checks,Refine designs for uniformity
+Design & Branding,Design consistency checks,Deliver consistency-approved design
+Design & Branding,Accessibility-focused design,Ensure basic accessibility standards
+Design & Branding,Accessibility-focused design,Check color contrast compliance
+Design & Branding,Accessibility-focused design,Design readable typography
+Design & Branding,Accessibility-focused design,Ensure keyboard navigation support
+Design & Branding,Accessibility-focused design,Add accessibility labels and hints
+Design & Branding,Accessibility-focused design,Design for screen readers
+Design & Branding,Accessibility-focused design,Test designs with accessibility tools
+Design & Branding,Accessibility-focused design,Address accessibility issues
+Design & Branding,Accessibility-focused design,Align with WCAG guidelines
+Design & Branding,Accessibility-focused design,Produce accessibility-compliant design
+
+Prompt Engineering & Optimization,Prompt structure design,Design a basic structured prompt
+Prompt Engineering & Optimization,Prompt structure design,Define clear prompt sections
+Prompt Engineering & Optimization,Prompt structure design,Organize instructions logically
+Prompt Engineering & Optimization,Prompt structure design,Separate context and task clearly
+Prompt Engineering & Optimization,Prompt structure design,Add examples and guidance
+Prompt Engineering & Optimization,Prompt structure design,Optimize structure for clarity
+Prompt Engineering & Optimization,Prompt structure design,Adapt structure for task type
+Prompt Engineering & Optimization,Prompt structure design,Reduce ambiguity in prompt layout
+Prompt Engineering & Optimization,Prompt structure design,Standardize prompt template
+Prompt Engineering & Optimization,Prompt structure design,Produce reusable structured prompt
+Prompt Engineering & Optimization,Role-based prompting,Create a basic role-based prompt
+Prompt Engineering & Optimization,Role-based prompting,Assign clear role and expertise
+Prompt Engineering & Optimization,Role-based prompting,Define responsibilities of the role
+Prompt Engineering & Optimization,Role-based prompting,Align role with task objectives
+Prompt Engineering & Optimization,Role-based prompting,Use role to guide tone and depth
+Prompt Engineering & Optimization,Role-based prompting,Test role effectiveness
+Prompt Engineering & Optimization,Role-based prompting,Refine role specificity
+Prompt Engineering & Optimization,Role-based prompting,Combine roles with constraints
+Prompt Engineering & Optimization,Role-based prompting,Adapt role for different domains
+Prompt Engineering & Optimization,Role-based prompting,Produce high-impact role-based prompt
+Prompt Engineering & Optimization,Constraint definition,Define basic prompt constraints
+Prompt Engineering & Optimization,Constraint definition,Set length and format constraints
+Prompt Engineering & Optimization,Constraint definition,Add tone and style constraints
+Prompt Engineering & Optimization,Constraint definition,Define scope and exclusions
+Prompt Engineering & Optimization,Constraint definition,Prevent undesired outputs
+Prompt Engineering & Optimization,Constraint definition,Balance constraints with creativity
+Prompt Engineering & Optimization,Constraint definition,Test constraint effectiveness
+Prompt Engineering & Optimization,Constraint definition,Refine constraints for clarity
+Prompt Engineering & Optimization,Constraint definition,Standardize constraint language
+Prompt Engineering & Optimization,Constraint definition,Produce constraint-optimized prompt
+Prompt Engineering & Optimization,Multi-step prompt creation,Create a simple multi-step prompt
+Prompt Engineering & Optimization,Multi-step prompt creation,Break task into logical steps
+Prompt Engineering & Optimization,Multi-step prompt creation,Sequence steps clearly
+Prompt Engineering & Optimization,Multi-step prompt creation,Guide reasoning step by step
+Prompt Engineering & Optimization,Multi-step prompt creation,Add checkpoints between steps
+Prompt Engineering & Optimization,Multi-step prompt creation,Optimize steps for accuracy
+Prompt Engineering & Optimization,Multi-step prompt creation,Reduce cognitive overload
+Prompt Engineering & Optimization,Multi-step prompt creation,Adapt steps for complex tasks
+Prompt Engineering & Optimization,Multi-step prompt creation,Test step-by-step flow
+Prompt Engineering & Optimization,Multi-step prompt creation,Produce robust multi-step prompt
+Prompt Engineering & Optimization,Few-shot prompting,Create basic few-shot prompt
+Prompt Engineering & Optimization,Few-shot prompting,Select relevant examples
+Prompt Engineering & Optimization,Few-shot prompting,Design input-output pairs
+Prompt Engineering & Optimization,Few-shot prompting,Ensure example diversity
+Prompt Engineering & Optimization,Few-shot prompting,Align examples with task goal
+Prompt Engineering & Optimization,Few-shot prompting,Optimize number of examples
+Prompt Engineering & Optimization,Few-shot prompting,Refine examples for clarity
+Prompt Engineering & Optimization,Few-shot prompting,Test few-shot performance
+Prompt Engineering & Optimization,Few-shot prompting,Adapt examples for new tasks
+Prompt Engineering & Optimization,Few-shot prompting,Produce high-performing few-shot prompt
+Prompt Engineering & Optimization,Zero-shot prompting,Create basic zero-shot prompt
+Prompt Engineering & Optimization,Zero-shot prompting,Write clear task instructions
+Prompt Engineering & Optimization,Zero-shot prompting,Define expected output explicitly
+Prompt Engineering & Optimization,Zero-shot prompting,Reduce ambiguity in wording
+Prompt Engineering & Optimization,Zero-shot prompting,Leverage role and constraints
+Prompt Engineering & Optimization,Zero-shot prompting,Optimize prompt for generalization
+Prompt Engineering & Optimization,Zero-shot prompting,Test zero-shot accuracy
+Prompt Engineering & Optimization,Zero-shot prompting,Refine wording for consistency
+Prompt Engineering & Optimization,Zero-shot prompting,Adapt zero-shot prompt across domains
+Prompt Engineering & Optimization,Zero-shot prompting,Produce reliable zero-shot prompt
+Prompt Engineering & Optimization,Prompt refinement,Refine an existing prompt
+Prompt Engineering & Optimization,Prompt refinement,Identify weaknesses in prompt
+Prompt Engineering & Optimization,Prompt refinement,Clarify vague instructions
+Prompt Engineering & Optimization,Prompt refinement,Improve prompt efficiency
+Prompt Engineering & Optimization,Prompt refinement,Reduce unnecessary complexity
+Prompt Engineering & Optimization,Prompt refinement,Enhance output quality
+Prompt Engineering & Optimization,Prompt refinement,Test refined prompt
+Prompt Engineering & Optimization,Prompt refinement,Iterate based on results
+Prompt Engineering & Optimization,Prompt refinement,Document refinements
+Prompt Engineering & Optimization,Prompt refinement,Produce optimized final prompt
+Prompt Engineering & Optimization,Output formatting control,Define basic output format
+Prompt Engineering & Optimization,Output formatting control,Specify headings and structure
+Prompt Engineering & Optimization,Output formatting control,Control length and verbosity
+Prompt Engineering & Optimization,Output formatting control,Enforce lists tables or bullets
+Prompt Engineering & Optimization,Output formatting control,Standardize response style
+Prompt Engineering & Optimization,Output formatting control,Prevent unwanted formatting
+Prompt Engineering & Optimization,Output formatting control,Test formatting consistency
+Prompt Engineering & Optimization,Output formatting control,Refine formatting instructions
+Prompt Engineering & Optimization,Output formatting control,Adapt format for use case
+Prompt Engineering & Optimization,Output formatting control,Produce format-controlled prompt
+Prompt Engineering & Optimization,Prompt testing and evaluation,Test prompt with sample inputs
+Prompt Engineering & Optimization,Prompt testing and evaluation,Evaluate output quality
+Prompt Engineering & Optimization,Prompt testing and evaluation,Check consistency of responses
+Prompt Engineering & Optimization,Prompt testing and evaluation,Identify failure cases
+Prompt Engineering & Optimization,Prompt testing and evaluation,Measure prompt effectiveness
+Prompt Engineering & Optimization,Prompt testing and evaluation,Compare prompt variations
+Prompt Engineering & Optimization,Prompt testing and evaluation,Iterate based on test results
+Prompt Engineering & Optimization,Prompt testing and evaluation,Document testing outcomes
+Prompt Engineering & Optimization,Prompt testing and evaluation,Validate prompt reliability
+Prompt Engineering & Optimization,Prompt testing and evaluation,Produce tested and approved prompt
+Prompt Engineering & Optimization,Prompt library organization,Organize basic prompt collection
+Prompt Engineering & Optimization,Prompt library organization,Group prompts by category
+Prompt Engineering & Optimization,Prompt library organization,Standardize prompt naming
+Prompt Engineering & Optimization,Prompt library organization,Tag prompts by use case
+Prompt Engineering & Optimization,Prompt library organization,Remove duplicate prompts
+Prompt Engineering & Optimization,Prompt library organization,Version control prompts
+Prompt Engineering & Optimization,Prompt library organization,Document prompt usage
+Prompt Engineering & Optimization,Prompt library organization,Maintain prompt library
+Prompt Engineering & Optimization,Prompt library organization,Optimize library for reuse
+Prompt Engineering & Optimization,Prompt library organization,Produce scalable prompt library
