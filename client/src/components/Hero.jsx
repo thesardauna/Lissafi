@@ -1,8 +1,6 @@
 export default function Hero() {
   const goToPrompts = () => {
-    document
-      .getElementById("prompts")
-      ?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("prompts")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
