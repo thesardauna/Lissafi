@@ -1,5 +1,6 @@
 import Hero from "./components/Hero.jsx";
 import PromptList from "./components/PromptList.jsx";
+import "./styles.css";
 
 export default function App() {
   return (
